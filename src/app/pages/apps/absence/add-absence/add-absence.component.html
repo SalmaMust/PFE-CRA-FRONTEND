@@ -1,0 +1,79 @@
+<h3>
+    Create Absence</h3>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <form (ngSubmit)="onSubmit()" class="form-horizontal">
+                        <div class="row">
+                            <div class="col">
+
+
+
+                                <div class="form-group row">
+
+                                    <label class="col-lg-2 col-form-label" for="name"> Type</label>
+                                    <div class="col-lg-10">
+                                        <select class="form-control" [(ngModel)]="absence.type" name="type">
+                                        <option *ngFor="let type of typeAbsence" [ngValue]="type">
+                                            {{type}}
+                                        </option>
+                                    </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-2 col-form-label" for="name">Start Date</label>
+                                    <div class="col-lg-10">
+                                        <input type="date" class="form-control" id="startDate" required [(ngModel)]="absence.startDate" name="startDate">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group row">
+                                    <label style="height: 48px;" class="col-lg-2 col-form-label" for="name">End Date </label>
+
+                                    <div class="col-lg-10">
+                                        <input type="date" class="form-control" id="endDate" required [(ngModel)]="absence.endDate" name="endDate">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-2 col-form-label" for="name"> Status</label>
+                                    <div class="col-lg-10">
+                                        <select class="form-control" [(ngModel)]="absence.status" name="status">
+                                            <option *ngFor="let stat of status" [ngValue]="stat">
+                                                {{stat}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+
+                    </form>
+                    <div [hidden]="!submitted">
+                        <h4>You submitted successfully!</h4>
+                        <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+                    </div>
+                </div>
+                <!-- end card-body -->
+            </div>
+            <!-- end card-->
+        </div>
+        <!-- end col -->
+    </div>
+</div>
+<!-- end row -->

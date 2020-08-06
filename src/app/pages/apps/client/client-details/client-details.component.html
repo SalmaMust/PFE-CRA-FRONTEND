@@ -1,0 +1,64 @@
+<h3>Client Details </h3>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <form (ngSubmit)="onSubmit()" class="form-horizontal">
+                        <div class="row">
+                            <div class="col">
+
+                                <div class="form-group row">
+                                    <label class="col-lg-2 col-form-label" for="name">First Name</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="firstname" required [(ngModel)]="client.firstname" name="firstname">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-2 col-form-label" for="name">Last Name</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="lastname" required [(ngModel)]="client.lastname" name="lastname">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-2 col-form-label" for="name">Email</label>
+                                    <div class="col-lg-10">
+
+                                        <input type="text" class="form-control" id="email" required [(ngModel)]="client.email" name="email">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-2 col-form-label" for="name">Phone</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="phone" required [(ngModel)]="client.phone" name="phone">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-2 col-form-label" for="name">Address</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="address" required [(ngModel)]="client.address" name="address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+
+                    </form>
+                    <div [hidden]="!submitted">
+                        <h4>You submitted successfully!</h4>
+                    </div>
+                </div>
+                <!-- end card-body -->
+            </div>
+            <!-- end card-->
+        </div>
+        <!-- end col -->
+    </div>
+</div>
+<!-- end row -->

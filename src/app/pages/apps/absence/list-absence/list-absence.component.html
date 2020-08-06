@@ -1,0 +1,130 @@
+<div class="container-fluid">
+
+    <div class="row page-title align-items-center">
+        <div class="col-md-3 col-xl-6">
+            <h4 class="mb-3 mt-2">ADD Absence</h4>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()" class="form-horizontal">
+                    <div class="row">
+                        <div class="col">
+                            <div class=" row filter-row">
+                                <div class="col-sm-2 col-md-2 col-md-2">
+                                    <div class="form-group form-focus">
+                                        <label class="form-group" for="name">Type</label>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" [(ngModel)]="absence.type" name="type">
+                                            <option *ngFor="let type of typeAbsence" [ngValue]="type">
+                                                {{type}}
+                                            </option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-md-3 col-md-2">
+                                    <div class="form-group form-focus">
+
+                                        <label class="form-group" for="name">Start Date</label>
+                                        <div class="col-xs-6">
+                                            <input type="date" class="form-control" id="startDate" required [(ngModel)]="absence.startDate" name="startDate">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-md-3 col-md-3">
+                                    <div class="form-group form-focus">
+
+                                        <label class="form-group" for="name">End Date </label>
+                                        <div class="col-xs-6">
+                                            <input type="date" class="form-control" id="endDate" required [(ngModel)]="absence.endDate" name="endDate">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-2 col-md-2 col-md-2">
+                                    <div class="form-group form-focus">
+
+                                        <label class="form-group" for="name"> Status</label>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" [(ngModel)]="absence.status" name="status">
+                                            <option *ngFor="let stat of status" [ngValue]="stat">
+                                                {{stat}}
+                                            </option>
+                                        </select>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div> <button type="submit" class="btn btn-soft-primary btn-lg float-right ">ADD</button>
+
+                        </div>
+                    </div>
+
+                </form>
+                <div [hidden]="!submitted">
+                    <h4>You submitted successfully!</h4>
+                    <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end card-body -->
+    <!-- end card-->
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="row page-title align-items-center">
+            <div class="col-md-3 col-xl-6">
+                <h4 class="mb-1 mt-0"> List Absences</h4>
+            </div>
+
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped mb-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">End Date</th>
+                                    <th scope="col">Status</th>
+
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let absence of dataSource">
+                                    <td>{{absence.id}}</td>
+                                    <td>{{absence.type}}</td>
+
+                                    <td>{{absence.startDate}}</td>
+                                    <td>{{absence.endDate}}</td>
+                                    <td>{{absence.status}}</td>
+
+                                    <td><button (click)="deleteAbsence(absence.id)" class="btn btn-soft-danger">Delete</button>
+                                        <button (click)="absenceDetails(absence.id)" class="btn btn-soft-warning" style="margin-left: 10px">Details</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

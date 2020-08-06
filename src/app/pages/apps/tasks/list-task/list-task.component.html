@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    Project Tasks Board
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <label class="font-weight-bold d-inline mr-2">
+                                <i class="icon-dual icon-xs mr-2" data-feather="hard-drive"></i>
+                                Project:
+                            </label>
+                            <div class="dropdown d-inline" ngbDropdown>
+                                <a class="font-weight-bold dropdown-toggle" href="javascript: void(0);" role="button" id="dropdownMenuLink" ngbDropdownToggle>
+                                    Shreyu Design
+                                    <i class='uil uil-angle-down font-size-16 align-middle'></i>
+                                </a>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid">
+    <div class="row page-title align-items-center">
+        <div class="col-md-3 col-xl-6">
+            <h4 class="mb-1 mt-0">Tasks</h4>
+        </div>
+        <div class="col-md-9 col-xl-6 text-md-right">
+            <div class="mt-4 mt-md-0">
+                <button type="button" (click)="goToAdd()" class="btn btn-danger mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Create
+            Task </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table m-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Task Name</th>
+                                    <th>Date</th>
+                                    <th>Employée</th>
+                                    <th>Project</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let task of dataSource">
+                                    <td>{{task.id}}</td>
+                                    <td>{{task.taskName}}</td>
+                                    <td>{{task.date}}</td>
+                                    <td>{{task.user.firstname}}</td>
+                                    <td>{{task.project.projectName}}</td>
+
+                                    <td><button (click)="deleteTask(task.id)" class="btn btn-danger">Delete</button>
+                                        <button (click)="taskDetails(task.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
