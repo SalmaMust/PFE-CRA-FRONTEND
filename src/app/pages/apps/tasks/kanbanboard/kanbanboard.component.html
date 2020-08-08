@@ -11,31 +11,26 @@
                                 Project:
                             </label>
                             <div class="dropdown d-inline" ngbDropdown>
-                                <a class="font-weight-bold dropdown-toggle" href="javascript: void(0);" role="button"
-                                    id="dropdownMenuLink" ngbDropdownToggle>
+                                <a class="font-weight-bold dropdown-toggle" href="javascript: void(0);" role="button" id="dropdownMenuLink" ngbDropdownToggle>
                                     Shreyu Design
                                     <i class='uil uil-angle-down font-size-16 align-middle'></i>
                                 </a>
 
                                 <div class="dropdown-menu" ngbDropdownMenu>
                                     <a class="dropdown-item" href="javascript: void(0);">
-                                        <i class="icon-dual icon-xs mr-2" data-feather="hard-drive"></i>Shreyu
-                                        Design
+                                        <i class="icon-dual icon-xs mr-2" data-feather="hard-drive"></i>Shreyu Design
                                     </a>
                                     <a class="dropdown-item" href="javascript: void(0);">
-                                        <i class="icon-dual icon-xs mr-2" data-feather="briefcase"></i>
-                                        Development
+                                        <i class="icon-dual icon-xs mr-2" data-feather="briefcase"></i> Development
                                     </a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="javascript: void(0);">
                                         <i class="icon-dual icon-xs mr-2" data-feather="folder-plus">
-                                        </i>Shreyu
-                                        Angular
+                                        </i>Shreyu Angular
                                     </a>
                                     <a class="dropdown-item" href="javascript: void(0);">
                                         <i class="icon-dual icon-xs mr-2" data-feather="folder-plus">
-                                        </i>Shreyu
-                                        React
+                                        </i>Shreyu React
                                     </a>
                                 </div>
                             </div>
@@ -45,8 +40,10 @@
                                 New</button>
                         </div>
                     </div>
-                </div> <!-- end card body-->
-            </div> <!-- end card -->
+                </div>
+                <!-- end card body-->
+            </div>
+            <!-- end card -->
         </div>
         <!-- end col-12 -->
     </div>
@@ -57,8 +54,7 @@
                     <h5 class="mt-0 task-header font-size-18">Todo <span class="font-size-13">(3)</span>
                     </h5>
 
-                    <div class="task-list-items list-unstyled" id="todo" dndDropzone dndEffectAllowed="move"
-                        (dndDrop)="onDrop($event, todoTasks, 'todo')">
+                    <div class="task-list-items list-unstyled" id="todo" dndDropzone dndEffectAllowed="move" (dndDrop)="onDrop($event, todoTasks, 'todo')">
                         <li class="dndPlaceholder" dndPlaceholderRef></li>
                         <ng-container *ngFor="let task of todoTasks">
                             <li [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, todoTasks)">
@@ -73,51 +69,48 @@
                 <div class="tasks border">
                     <h5 class="mt-0 task-header font-size-15">In Progress <span class="font-size-13">(2)</span>
                     </h5>
-                    <div class="task-list-items list-unstyled" id="inprogress" dndDropzone dndEffectAllowed="move"
-                        (dndDrop)="onDrop($event, inprogressTasks, 'inprogress')">
+                    <div class="task-list-items list-unstyled" id="inprogress" dndDropzone dndEffectAllowed="move" (dndDrop)="onDrop($event, inprogressTasks, 'inprogress')">
                         <li class="dndPlaceholder" dndPlaceholderRef></li>
                         <ng-container *ngFor="let task of inprogressTasks">
-                            <li [dndDraggable]="task" dndEffectAllowed="move"
-                                (dndMoved)="onDragged(task, inprogressTasks)">
+                            <li [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, inprogressTasks)">
                                 <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
                                 </ng-template>
                             </li>
                         </ng-container>
                     </div>
-                </div> <!-- end tasks -->
+                </div>
+                <!-- end tasks -->
                 <!-- End progress -->
 
                 <div class="tasks border">
                     <h5 class="mt-0 task-header font-size-15">Review <span class="font-size-13">(2)</span>
                     </h5>
-                    <div class="task-list-items list-unstyled" id="review" dndDropzone dndEffectAllowed="move"
-                        (dndDrop)="onDrop($event, reviewTasks, 'review')">
+                    <div class="task-list-items list-unstyled" id="review" dndDropzone dndEffectAllowed="move" (dndDrop)="onDrop($event, reviewTasks, 'review')">
                         <li class="dndPlaceholder" dndPlaceholderRef></li>
                         <ng-container *ngFor="let task of reviewTasks">
-                            <li class="task-medium" [dndDraggable]="task" dndEffectAllowed="move"
-                                (dndMoved)="onDragged(task, reviewTasks)">
+                            <li class="task-medium" [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, reviewTasks)">
                                 <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
                                 </ng-template>
                             </li>
                         </ng-container>
                     </div>
-                </div> <!-- end tasks -->
+                </div>
+                <!-- end tasks -->
 
                 <div class="tasks border">
                     <h5 class="mt-0 task-header font-size-15">Done <span class="font-size-13">(1)</span>
                     </h5>
-                    <div class="task-list-items list-unstyled" id="done" dndDropzone dndEffectAllowed="move"
-                        (dndDrop)="onDrop($event, doneTasks, 'done')">
+                    <div class="task-list-items list-unstyled" id="done" dndDropzone dndEffectAllowed="move" (dndDrop)="onDrop($event, doneTasks, 'done')">
                         <li class="dndPlaceholder" dndPlaceholderRef></li>
                         <ng-container *ngFor="let task of doneTasks">
-                            <li class="task-medium" [dndDraggable]="task" dndEffectAllowed="move"
-                                (dndMoved)="onDragged(task, doneTasks)">
+                            <li class="task-medium" [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, doneTasks)">
                                 <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
                                 </ng-template>
                             </li>
                         </ng-container>
                     </div>
-                </div> <!-- end tasks -->
+                </div>
+                <!-- end tasks -->
             </div>
         </div>
     </div>
@@ -145,7 +138,8 @@
                     <a href="javascript:void(0);" class="dropdown-item text-danger"><i
                             class="uil uil-trash mr-2"></i>Delete</a>
                 </div>
-            </div> <!-- end dropdown -->
+            </div>
+            <!-- end dropdown -->
             <h6 class="mt-0 mb-2 font-size-15">
                 <a href="javascript: void(0);" class="text-body">{{ task.title }}</a>
             </h6>

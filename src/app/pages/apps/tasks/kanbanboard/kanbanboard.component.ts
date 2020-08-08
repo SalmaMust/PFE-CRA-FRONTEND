@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { DndDropEvent } from 'ngx-drag-drop';
-import {dndLists } from 'angular-drag-and-drop-lists';
+
 import { Task } from './board.model';
 
 import { tasks } from './data';

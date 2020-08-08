@@ -5,6 +5,8 @@ export class Task {
     id?:string;
     taskName: string;
     date: Date;
+    status: string;
     user: User;
     project: Project;
-}
+
+} 
