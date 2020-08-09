@@ -51,7 +51,7 @@
         <div class="col-12">
             <div class="board">
                 <div class="tasks border">
-                    <h5 class="mt-0 task-header font-size-18">Todo <span class="font-size-13">(3)</span>
+                    <h5 class="mt-0 task-header font-size-18">Todo <span class="font-size-13">({{todoSize}})</span>
                     </h5>
 
                     <div class="task-list-items list-unstyled" id="todo" dndDropzone dndEffectAllowed="move" (dndDrop)="onDrop($event, todoTasks, 'todo')">
@@ -67,7 +67,7 @@
 
                 <!-- Progress  -->
                 <div class="tasks border">
-                    <h5 class="mt-0 task-header font-size-15">In Progress <span class="font-size-13">(2)</span>
+                    <h5 class="mt-0 task-header font-size-15">In Progress <span class="font-size-13">({{inprogressSize}})</span>
                     </h5>
                     <div class="task-list-items list-unstyled" id="inprogress" dndDropzone dndEffectAllowed="move" (dndDrop)="onDrop($event, inprogressTasks, 'inprogress')">
                         <li class="dndPlaceholder" dndPlaceholderRef></li>
@@ -83,7 +83,7 @@
                 <!-- End progress -->
 
                 <div class="tasks border">
-                    <h5 class="mt-0 task-header font-size-15">Review <span class="font-size-13">(2)</span>
+                    <h5 class="mt-0 task-header font-size-15">Review <span class="font-size-13">({{reviewSize}})</span>
                     </h5>
                     <div class="task-list-items list-unstyled" id="review" dndDropzone dndEffectAllowed="move" (dndDrop)="onDrop($event, reviewTasks, 'review')">
                         <li class="dndPlaceholder" dndPlaceholderRef></li>
@@ -98,7 +98,7 @@
                 <!-- end tasks -->
 
                 <div class="tasks border">
-                    <h5 class="mt-0 task-header font-size-15">Done <span class="font-size-13">(1)</span>
+                    <h5 class="mt-0 task-header font-size-15">Done <span class="font-size-13">({{doneSize}})</span>
                     </h5>
                     <div class="task-list-items list-unstyled" id="done" dndDropzone dndEffectAllowed="move" (dndDrop)="onDrop($event, doneTasks, 'done')">
                         <li class="dndPlaceholder" dndPlaceholderRef></li>
@@ -141,27 +141,28 @@
             </div>
             <!-- end dropdown -->
             <h6 class="mt-0 mb-2 font-size-15">
-                <a href="javascript: void(0);" class="text-body">{{ task.title }}</a>
+                <a href="javascript: void(0);" class="text-body">{{ task.taskName }}</a>
             </h6>
 
-            <span class="badge" [ngClass]="{
-                'badge-soft-success': task.task === 'Low',
-                'badge-soft-warning': task.task === 'Medium',
-                'badge-soft-danger': task.task === 'High',
-                'badge-soft-info': task.task === 'Normal'
-            }">{{ task.task }}</span>
+            <span class="text-nowrap align-middle font-size-13 mr-2">
+                <i class="uil uil-comments-alt text-muted mr-1"></i>{{ task.description }}
+            </span>
 
             <p class="mb-0 mt-4">
-                <img src="{{ task.user }} " alt="user-img" class="avatar-xs rounded-circle mr-2" />
+                <!-- <img src="{{ task.user }} " alt="user-img" class="avatar-xs rounded-circle mr-2" /> -->
 
-                <span class="text-nowrap align-middle font-size-13 mr-2">
-                    <i class="uil uil-comments-alt text-muted mr-1"></i>{{ task.comments }}
-                </span>
+             
+                <span class="badge" [ngClass]="{
+                    'badge-soft-success': task.priorite === 'Low',
+                    'badge-soft-warning': task.priorite === 'Medium',
+                    'badge-soft-danger': task.priorite === 'High',
+                    'badge-soft-info': task.priorite === 'Normal'
+                }">{{ task.priorite }}</span>
 
-                <span class="text-nowrap align-middle font-size-13">
+               <!--  <span class="text-nowrap align-middle font-size-13">
                     <i class="uil uil-check-square mr-1 text-muted"></i>{{ task.donetask }}
-                </span>
-                <small class="float-right text-muted">{{ task.date }}</small>
+                </span> -->
+                <small class="float-right text-muted" >{{ task.date | date:'yyyy-MM-dd'}}</small>
             </p>
         </div>
     </div>

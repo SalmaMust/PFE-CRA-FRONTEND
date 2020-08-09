@@ -29,10 +29,27 @@
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label" for="name">Status</label>
                                     <div class="col-lg-10">
-
-                                        <input type="text" class="form-control" id="status" required [(ngModel)]="task.status" name="status">
+                                        <select class="form-control" [(ngModel)]="task.status" name="status">
+                                            <option selected> todo </option>
+                                            <option>inprogress</option> 
+                                            <option>review</option>
+                                            <option>done</option> 
+                                        </select>
                                     </div>
                                 </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-2 col-form-label" for="name">Priorité</label>
+                                    <div class="col-lg-10">
+                                        <select class="form-control" [(ngModel)]="task.priorite" name="priorite">
+                                            <option selected> Low </option>
+                                            <option>Normal</option> 
+                                            <option>Medium</option> 
+                                            <option>High</option> 
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label" for="name"> Employée</label>
                                     <div class="col-lg-10">

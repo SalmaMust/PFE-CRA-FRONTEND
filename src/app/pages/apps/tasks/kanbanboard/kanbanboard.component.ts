@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { DndDropEvent } from 'ngx-drag-drop';
 
-import { Task } from './board.model';
 
-import { tasks } from './data';
+//import { tasks } from './data';
+import { TaskService } from '../task.service';
+import { Task } from 'src/app/core/models/task.models';
 
 @Component({
   selector: 'app-kanbanboard',
@@ -21,21 +22,26 @@ export class KanbanboardComponent implements OnInit {
   breadCrumbItems: Array<{}>;
 
   // Task data
+  tasks: Task[];
   todoTasks: Task[];
   inprogressTasks: Task[];
   reviewTasks: Task[];
   doneTasks: Task[];
+  todoSize: any ;
+  inprogressSize: any ;
+  reviewSize: any ;
+  doneSize: any ;
 
-  constructor() { }
+  constructor(private taskService : TaskService) { }
 
   ngOnInit() {
     // tslint:disable-next-line: max-line-length
     this.breadCrumbItems = [{ label: 'Shreyu', path: '/' }, { label: 'Apps', path: '/' }, { label: 'Tasks', path: '/' }, { label: 'Tasks Board', active: true }];
-
-    /**
+    this.getAllTasks();
+        /**
      * Fetches Data
      */
-    this._fetchData();
+   
   }
   /**
    * On task drop event
@@ -43,13 +49,26 @@ export class KanbanboardComponent implements OnInit {
   onDrop(event: DndDropEvent, filteredList?: any[], targetStatus?: string) {
     if (filteredList && event.dropEffect === 'move') {
       let index = event.index;
-
+      console.log(targetStatus);
+      event.data.status = targetStatus;
+      console.log('evnettt dataaa', event.data);
+      this.save(event.data);
+      //
       if (typeof index === 'undefined') {
         index = filteredList.length;
       }
 
       filteredList.splice(index, 0, event.data);
     }
+  }
+
+  save(task: Task){
+    console.log(task);
+    
+    this.taskService.createTask(task)
+      .subscribe(data =>  console.log(data), error => console.log(error));
+    //this.task = new Task();
+    //this.gotoList();
   }
 
   /**
@@ -59,6 +78,8 @@ export class KanbanboardComponent implements OnInit {
    */
   onDragged(item: any, list: any[]) {
     const index = list.indexOf(item);
+    console.log(item);
+    //this.save(item)
     list.splice(index, 1);
   }
 
@@ -67,9 +88,32 @@ export class KanbanboardComponent implements OnInit {
    */
   private _fetchData() {
     // all tasks
-    this.todoTasks = tasks.filter(t => t.status === 'todo');
-    this.inprogressTasks = tasks.filter(t => t.status === 'inprogress');
-    this.reviewTasks = tasks.filter(t => t.status === 'review');
-    this.doneTasks = tasks.filter(t => t.status === 'done');
+    console.log('fetch data');
+    
+    this.todoTasks = this.tasks.filter(t => t.status === 'todo');
+    this.inprogressTasks = this.tasks.filter(t => t.status === 'inprogress');
+    this.reviewTasks = this.tasks.filter(t => t.status === 'review');
+    this.doneTasks = this.tasks.filter(t => t.status === 'done');
+    this.doneSize = this.doneTasks.length;
+    this.todoSize = this.todoTasks.length;
+    this.reviewSize = this.reviewTasks.length;
+    this.inprogressSize = this.inprogressTasks.length;
+  }
+
+  public getAllTasks = () => {
+    console.log('aaaaaa');
+    this.taskService.getlistTask()
+    .subscribe(res => {
+   //this.isLoading = false;
+
+     this.tasks = res as Task[];
+      console.log(res);
+      this._fetchData();
+
+    },
+    (error) => {
+      //this.errorService.handleError(error);
+      console.log('kkkkkkkkkkkkkkk', error);
+    })
   }
 }
