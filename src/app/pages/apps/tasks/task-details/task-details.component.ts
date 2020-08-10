@@ -25,10 +25,7 @@ export class TaskDetailsComponent implements OnInit {
 
     this.getTaskByid();
     this.getAllProjects();
-    console.log(this.projects);
-
     this.getAllUsers();
-    console.log(this.users);
 
   }
 
@@ -51,7 +48,7 @@ export class TaskDetailsComponent implements OnInit {
     this.gotoList();
   }
   gotoList() {
-    this.router.navigate(['/list-task']);
+    this.router.navigate(['/task-board']);
   }
 
   onSubmit() {

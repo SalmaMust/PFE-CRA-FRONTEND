@@ -6,6 +6,7 @@ import { DndDropEvent } from 'ngx-drag-drop';
 //import { tasks } from './data';
 import { TaskService } from '../task.service';
 import { Task } from 'src/app/core/models/task.models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-kanbanboard',
@@ -22,6 +23,9 @@ export class KanbanboardComponent implements OnInit {
   breadCrumbItems: Array<{}>;
 
   // Task data
+  task: Task = new Task();
+
+  dataSource : Task[];
   tasks: Task[];
   todoTasks: Task[];
   inprogressTasks: Task[];
@@ -32,7 +36,7 @@ export class KanbanboardComponent implements OnInit {
   reviewSize: any ;
   doneSize: any ;
 
-  constructor(private taskService : TaskService) { }
+  constructor(private taskService : TaskService,  private router: Router) { }
 
   ngOnInit() {
     // tslint:disable-next-line: max-line-length
@@ -115,5 +119,36 @@ export class KanbanboardComponent implements OnInit {
       //this.errorService.handleError(error);
       console.log('kkkkkkkkkkkkkkk', error);
     })
+  } 
+  goToAdd() {
+    this.router.navigate(['add-task']);
+  }
+
+  public deleteTask  = (id) => {
+    this.taskService.delete(id)
+    .subscribe(res => {
+   //this.isLoading = false;
+
+  /*    this.dataSource.find(id) = res as User[];
+    console.log(res); */
+
+    this.dataSource.forEach(
+      (item, index) => {
+        if(item.id == id)
+        this.dataSource.splice(index, 1);
+      }
+    );
+
+    },
+    (error) => {
+      //this.errorService.handleError(error);
+      console.log(error);
+    })
+  }
+
+  taskDetails ( id ){
+
+    //this.router.navigate(['espace-administration/details/'+id]);
+    this.router.navigate(['task-details/'+id]);
   }
 }

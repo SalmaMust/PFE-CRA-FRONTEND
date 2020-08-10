@@ -1,64 +1,65 @@
-<h3>Client Details </h3>
-<div class="container-fluid">
+<div class="container-fluid ">
+    <div class="row page-title align-items-center">
 
+        <div class="col-md-3 col-xl-6">
+
+            <h4 class="mb-1 mt-0"> Client Details</h4>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-12">
-            <div class="card">
+        <div class="col-6 ">
+            <div class="card-box center">
                 <div class="card-body">
-
-
-                    <form (ngSubmit)="onSubmit()" class="form-horizontal">
-                        <div class="row">
-                            <div class="col">
-
-                                <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label" for="name">First Name</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" class="form-control" id="firstname" required [(ngModel)]="client.firstname" name="firstname">
+                    <div class="modal-body">
+                        <div class="m-b-30">
+                            <form novalidate="" (ngSubmit)="onSubmit()" class="form-horizontal">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group"><label class="control-label">First Name <span  class="text-danger">*</span></label><input class="form-control " name="firstName" required [(ngModel)]="client.firstname" type="text"></div>
                                     </div>
                                 </div>
+                                <div class="row">
 
-                                <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label" for="name">Last Name</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" class="form-control" id="lastname" required [(ngModel)]="client.lastname" name="lastname">
+                                    <div class="col-md-6">
+                                        <div class="form-group"><label class="control-label">Last Name<span  class="text-danger">*</span></label><input class="form-control " name="lastName" required [(ngModel)]="client.lastname" type="text"></div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label" for="name">Email</label>
-                                    <div class="col-lg-10">
+                                <div class="row">
 
-                                        <input type="text" class="form-control" id="email" required [(ngModel)]="client.email" name="email">
+                                    <div class="col-md-6">
+                                        <div class="form-group"><label class="control-label">Email <span  class="text-danger m-l-6">*</span></label><input class="form-control " name="email" required [(ngModel)]="client.email" pattern="([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,6})"
+                                                required [(ngModel)]="client.firstname" type="email">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label" for="name">Phone</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" class="form-control" id="phone" required [(ngModel)]="client.phone" name="phone">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group"><label class="control-label">Address<span  class="text-danger">*</span></label><input required [(ngModel)]="client.address" class="form-control " name="address" required [(ngModel)]="client.firstname" type="text"></div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label" for="name">Address</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" class="form-control" id="address" required [(ngModel)]="client.address" name="address">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group"><label class="control-label">Phone <span  class="text-danger">*</span></label>
+                                            <input class="form-control unit-cost " required [(ngModel)]="client.phone" name="mobile" pattern="(\d{10}|\d{12})" required [(ngModel)]="client.firstname" type="text">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
+                                <div class="row">
+                                </div>
+                                <br> <br>
+
+                                <div class="m-t-20 text-center">
+                                    <button class="btn btn-primary" type="submit">Create Client</button></div>
+                            </form>
+                            <div [hidden]="!submitted">
+                                <h6>You submitted successfully!</h6>
+
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
 
-                    </form>
-                    <div [hidden]="!submitted">
-                        <h4>You submitted successfully!</h4>
                     </div>
                 </div>
-                <!-- end card-body -->
             </div>
-            <!-- end card-->
         </div>
-        <!-- end col -->
-    </div>
-</div>
-<!-- end row -->

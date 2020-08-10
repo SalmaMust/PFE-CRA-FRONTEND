@@ -1,8 +1,11 @@
-<h3> Task details</h3>
-
-
 <div class="container-fluid">
+    <div class="row page-title align-items-center">
 
+        <div class="col-md-3 col-xl-6">
+
+            <h4 class="mb-1 mt-0">Task details </h4>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -23,48 +26,64 @@
                                     <label class="col-lg-2 col-form-label" for="name">Date</label>
                                     <div class="col-lg-10">
 
-                                        <input type="date" class="form-control" id="date" required [(ngModel)]="task.date" name="date" [value]="task.date">
+                                        <input type="date" class="form-control" id="date" required [(ngModel)]="task.date" name="date" [value]="task.date | date:'yyyy-MM-dd'">
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label" for="name">Status</label>
-                                    <div class="col-lg-10">
-
-                                        <input type="text" class="form-control" id="status" required [(ngModel)]="task.status" name="status">
+                                <div class=" form-group row ">
+                                    <label class="col-lg-2 col-form-label " for="name ">Status</label>
+                                    <div class="col-lg-10 ">
+                                        <select class="form-control " [(ngModel)]="task.status " name="status ">
+                                            <option selected> todo </option>
+                                            <option>inprogress</option> 
+                                            <option>review</option>
+                                            <option>done</option> 
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label" for="name"> Employée</label>
-                                    <div class="col-lg-10">
 
-                                        <select class="form-control" [(ngModel)]="task.user" name="user">
-                                    <option *ngFor="let user of users" [ngValue]="user">
+                                <div class="form-group row ">
+                                    <label class="col-lg-2 col-form-label " for="name ">Priorité</label>
+                                    <div class="col-lg-10 ">
+                                        <select class="form-control " [(ngModel)]="task.priorite " name="priorite ">
+                                            <option selected> Low </option>
+                                            <option>Normal</option> 
+                                            <option>Medium</option> 
+                                            <option>High</option> 
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row ">
+                                    <label class="col-lg-2 col-form-label " for="name "> Employée</label>
+                                    <div class="col-lg-10 ">
+
+                                        <select class="form-control " [(ngModel)]="task.user " name="user ">
+                                    <option *ngFor="let user of users " [ngValue]="user ">
                                         {{user.firstname}}
                                     </option>
                                 </select>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label" for="name"> Projet</label>
-                                    <div class="col-lg-10">
+                                <div class="form-group row ">
+                                    <label class="col-lg-2 col-form-label " for="name "> Projet</label>
+                                    <div class="col-lg-10 ">
 
-                                        <select class="form-control" [(ngModel)]="task.project" name="projet">
-                                            <option *ngFor="let project of projects" >
-                                                {{project.projectName}}
-                                            </option>
-                                        </select>
+                                        <select class="form-control " [(ngModel)]="task.project " name="projet ">
+                                    <option *ngFor="let prj of projects " [ngValue]="prj ">
+                                        {{prj.projectName}}
+                                    </option>
+                                </select>
                                     </div>
                                 </div>
 
 
                             </div>
-                            <div class="col">
+                            <div class="col ">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit " class="btn btn-success ">Submit</button>
 
                     </form>
-                    <div [hidden]="!submitted">
+                    <div [hidden]="!submitted ">
                         <h4>You submitted successfully!</h4>
                     </div>
                 </div>

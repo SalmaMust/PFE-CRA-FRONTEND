@@ -6,8 +6,16 @@ export class Project {
     description: string;
     dateDebut: Date; 
     dateFin: Date; 
+    status: string;
     client: Client;
+    type: string;
 }
+
+
+
+
+
+
 const widgetData = [
     {
         icon: 'grid',

@@ -8,5 +8,6 @@ export class Task {
     status: string;
     user: User;
     project: Project;
-
+priorite: string;
+description: String;
 } 

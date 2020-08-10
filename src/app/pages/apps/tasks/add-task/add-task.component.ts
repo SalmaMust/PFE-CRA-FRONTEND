@@ -47,7 +47,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/list-task']);
+    this.router.navigate(['/task-board']);
   }
 
   public getAllProjects = () => {

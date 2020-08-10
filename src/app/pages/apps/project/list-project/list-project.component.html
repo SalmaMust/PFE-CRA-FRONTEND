@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row page-title align-items-center">
         <div class="col-md-3 col-xl-6">
-            <h4 class="mb-1 mt-0">Projects</h4>
+            <h2 class="mb-1 mt-0">Projects List</h2>
         </div>
         <div class="col-md-9 col-xl-6 text-md-right">
             <div class="mt-4 mt-md-0">
@@ -48,30 +48,34 @@
             </div>
           </div>
     </div>
-
-
 </div>-->
+
     <div class="row">
         <div class="col-xl-4 col-lg-6" *ngFor="let project of dataSource">
             <div class="card">
                 <div class="card-body">
-                    <div class="badge badge-success float-right">
-                    </div>
 
-                    <p class="text-success text-uppercase font-size-12 mb-2"></p>
-                    <div class="float-right "><button (click)="projectDetails(project.id)" class="btn btn-soft-warning btn-lg" style="margin-left: 10px">Details</button>
-                    </div>
+                    <h5>
+                        <div class="badge  badge-success float-right " [ngClass]="{
+                    'badge-soft-success': project.status === 'Completed',
+                    'badge-soft-info': project.status ==='In Progress',
+                    'badge-soft-warning': project.status === 'Pending'}">
+                            {{ project.status }}</div>
+                    </h5>
 
-                    <div class="float-right "><button (click)="deleteProject(project.id)" class="btn btn-soft-danger btn-lg">Delete</button>
-                    </div>
-                    <h4 cl><a href="javascript: void(0)" class="text-dark ">{{ project.projectName }}</a></h4>
+                    <p class=" text-uppercase font-size-15 mb-2" [ngClass]="{
+                        'text-success': project.status === 'Completed',
+                        'text-info': project.status ==='In Progress',
+                        'text-warning': project.status === 'Pending'}">{{ project.type }}</p>
 
+                    <h3 cl><a href="javascript: void(0)" class="text-dark">{{ project.projectName }}</a></h3>
                     <p class="text-muted mb-4">{{ project.description }}</p>
 
                     <div>
                         Client Name : {{project.client.firstname}}
 
                     </div>
+
                 </div>
                 <div class="card-body border-top">
                     <div class="row align-items-center">
@@ -79,20 +83,25 @@
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item pr-2">
                                     <a href="javascript: void(0)" class="text-muted d-inline-block" placement="top" ngbTooltip=" Strat Date">
-                                        <i class="uil uil-calender mr-1"></i> {{ project.dateDebut }}
+                                        <i class="uil uil-calender mr-1"></i> {{ project.dateDebut| date:'yyyy-MM-dd' }}
                                     </a>
                                 </li>
                                 <li class="list-inline-item pr-2">
                                     <a href="javascript: void(0)" class="text-muted d-inline-block" placement="top" ngbTooltip="End Date">
-                                        <i class="uil uil-calender mr-1"></i> {{ project.dateFin }}
+                                        <i class="uil uil-calender mr-1"></i> {{ project.dateFin| date:'yyyy-MM-dd' }}
                                     </a>
                                 </li>
+                                <div class="float-right">
+                                    <i class=" uil uil-trash mr-2 " (click)="deleteProject(project.id)"> </i>
+                                    <i class="uil uil-edit-alt mr-2 float-lg-right " (click)="projectDetails(project.id)"></i>
+                                </div>
+
+
+
 
                             </ul>
                         </div>
-                        <div class="col offset-sm-1">
 
-                        </div>
                     </div>
                 </div>
             </div>

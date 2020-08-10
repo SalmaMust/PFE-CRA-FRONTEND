@@ -51,7 +51,7 @@
         <div class="col-12">
             <div class="board">
                 <div class="tasks border">
-                    <h5 class="mt-0 task-header font-size-18">Todo <span class="font-size-13">({{todoSize}})</span>
+                    <h5 class="mt-0 task-header font-size-15">Todo <span class="font-size-13">({{todoSize}})</span>
                     </h5>
 
                     <div class="task-list-items list-unstyled" id="todo" dndDropzone dndEffectAllowed="move" (dndDrop)="onDrop($event, todoTasks, 'todo')">
@@ -126,16 +126,16 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="taskDetails(task.id)"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-user-plus mr-2"></i>Add
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="goToAdd()"><i class="uil uil-user-plus mr-2"></i>Add
                         People</a>
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item text-warning"><i
-                            class="uil uil-exit mr-2"></i>Leave</a>
+                            class="uil uil-exit mr-2" ></i>Leave</a>
                     <div class="dropdown-divider"></div>
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item text-danger"><i
+                    <a href="javascript:void(0);" class="dropdown-item text-danger" (click)="deleteTask(task.id)"><i
                             class="uil uil-trash mr-2"></i>Delete</a>
                 </div>
             </div>
@@ -151,7 +151,7 @@
             <p class="mb-0 mt-4">
                 <!-- <img src="{{ task.user }} " alt="user-img" class="avatar-xs rounded-circle mr-2" /> -->
 
-             
+
                 <span class="badge" [ngClass]="{
                     'badge-soft-success': task.priorite === 'Low',
                     'badge-soft-warning': task.priorite === 'Medium',
@@ -159,10 +159,10 @@
                     'badge-soft-info': task.priorite === 'Normal'
                 }">{{ task.priorite }}</span>
 
-               <!--  <span class="text-nowrap align-middle font-size-13">
+                <!--  <span class="text-nowrap align-middle font-size-13">
                     <i class="uil uil-check-square mr-1 text-muted"></i>{{ task.donetask }}
                 </span> -->
-                <small class="float-right text-muted" >{{ task.date | date:'yyyy-MM-dd'}}</small>
+                <small class="float-right text-muted">{{ task.date | date:'yyyy-MM-dd'}}</small>
             </p>
         </div>
     </div>

@@ -31,7 +31,7 @@
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label" for="name">Start Date</label>
                                     <div class="col-lg-10">
-                                        <input type="date" class="form-control" id="startDate" required [(ngModel)]="absence.startDate" name="startDate">
+                                        <input type="date" class="form-control" id="startDate" required [(ngModel)]="absence.startDate" name="startDate" [value]="absence.startDate | date:'yyyy-MM-dd'">
                                     </div>
                                 </div>
 
@@ -41,7 +41,7 @@
                                     <label style="height: 48px;" class="col-lg-2 col-form-label" for="name">End Date </label>
 
                                     <div class="col-lg-10">
-                                        <input type="date" class="form-control" id="endDate" required [(ngModel)]="absence.endDate" name="endDate">
+                                        <input type="date" class="form-control" id="endDate" required [(ngModel)]="absence.endDate" name="endDate" [value]="absence.endDate | date:'yyyy-MM-dd'">
                                     </div>
                                 </div>
 

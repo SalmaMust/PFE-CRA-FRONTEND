@@ -69,7 +69,7 @@
                                 <tr *ngFor="let task of dataSource">
                                     <td>{{task.id}}</td>
                                     <td>{{task.taskName}}</td>
-                                    <td>{{task.date}}</td>
+                                    <td>{{ task.date | date:'yyyy-MM-dd'}}</td>
                                     <td>{{task.status}}</td>
                                     <td>{{task.priorite}}</td>
                                     <td>{{task.user.firstname}}</td>

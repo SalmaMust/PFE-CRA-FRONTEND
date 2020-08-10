@@ -109,8 +109,8 @@
                                     <td>{{absence.id}}</td>
                                     <td>{{absence.type}}</td>
 
-                                    <td>{{absence.startDate}}</td>
-                                    <td>{{absence.endDate}}</td>
+                                    <td>{{absence.startDate| date:'yyyy-MM-dd'}}</td>
+                                    <td>{{absence.endDate| date:'yyyy-MM-dd'}}</td>
                                     <td>{{absence.status}}</td>
 
                                     <td><button (click)="deleteAbsence(absence.id)" class="btn btn-soft-danger">Delete</button>
