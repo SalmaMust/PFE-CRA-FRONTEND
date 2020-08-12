@@ -68,6 +68,7 @@
                         'text-info': project.status ==='In Progress',
                         'text-warning': project.status === 'Pending'}">{{ project.type }}</p>
 
+
                     <h3 cl><a href="javascript: void(0)" class="text-dark">{{ project.projectName }}</a></h3>
                     <p class="text-muted mb-4">{{ project.description }}</p>
 
@@ -96,8 +97,11 @@
                                     <i class="uil uil-edit-alt mr-2 float-lg-right " (click)="projectDetails(project.id)"></i>
                                 </div>
 
-
-
+                                <div class="badge" [ngClass]="{
+                                    'badge-soft-success': project.status === 'High',
+                                    'badge-soft-info': project.status ==='Low',
+                                    'badge-soft-warning': project.status === 'Medium'}">
+                                    {{ project.priorite }}</div>
 
                             </ul>
                         </div>

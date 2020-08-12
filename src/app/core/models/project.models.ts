@@ -9,6 +9,8 @@ export class Project {
     status: string;
     client: Client;
     type: string;
+    priorite: string;
+
 }
 
 
