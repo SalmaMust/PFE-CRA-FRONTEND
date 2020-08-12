@@ -8,7 +8,7 @@
 
         <div class="col-md-9 col-xl-6 text-md-right">
             <div class="mt-4 mt-md-0">
-                <button type="button" (click)="goToAdd()" class="btn btn-danger mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Create
+                <button type="button" (click)="goToAdd()" class="btn btn-soft-primary mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Create
             Client</button>
 
             </div>
@@ -85,8 +85,8 @@
                                 <td>{{client.email}}</td>
                                 <td>{{client.phone}}</td>
                                 <td>{{client.address}}</td>
-                                <td><button (click)="deleteClient(client.id)" class="btn btn-danger">Delete</button>
-                                    <button (click)="clientDetails(client.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                                <td><button (click)="deleteClient(client.id)" class="btn btn-soft-danger">Delete</button>
+                                    <button (click)="clientDetails(client.id)" class=" btn btn-soft-success" style="margin-left: 10px">Details</button>
                                 </td>
                             </tr>
                         </tbody>

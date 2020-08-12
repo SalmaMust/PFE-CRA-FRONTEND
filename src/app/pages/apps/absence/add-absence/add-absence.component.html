@@ -1,4 +1,4 @@
-<h3>
+<!-- <h3>
     Create Absence</h3>
 
 
@@ -66,14 +66,79 @@
                     </form>
                     <div [hidden]="!submitted">
                         <h4>You submitted successfully!</h4>
-                        <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
                     </div>
                 </div>
-                <!-- end card-body -->
             </div>
-            <!-- end card-->
         </div>
-        <!-- end col -->
     </div>
 </div>
-<!-- end row -->
+-->
+
+<div class="container-fluid">
+    <div class="row page-title align-items-center">
+
+        <div class="col-md-3 col-xl-5">
+
+            <h4 class="mb-1 mt-0"> Add Absence </h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <form (ngSubmit)="onSubmit()" novalidate="" class="ng-untouched ng-pristine ng-valid">
+                        <div class="col-md-5">
+                            <div class="form-group"><label> Type <span  class="text-danger">*</span></label>
+                                <select class="form-control" id="type" formControlName="name" required [(ngModel)]="absence.type" name="type" [value]="absence.type">
+                                            <option *ngFor="let type of typeAbsence">{{type}}</option>
+                                        
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="form-group"><label>Start Date<span  class="text-danger">*</span></label>
+                                <input type="date" class="form-control" id="dateDebut" required [(ngModel)]="absence.startDate" [value]="absence.startDate| date:'yyyy-MM-dd'" name="dateDebut">
+                                <!---->
+
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group"><label>End Date<span  class="text-danger">*</span></label>
+                                <input type="date" class="form-control" id="dateFin" required [(ngModel)]="absence.endDate" [value]="absence.endDate | date:'yyyy-MM-dd'" name="dateFin">
+
+                                <!---->
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="form-group"><label>Status <span  class="text-danger">*</span></label>
+                                <select class="form-control" id="status" formControlName="name" required [(ngModel)]="absence.status" name="status" [value]="absence.status">
+                                    <option *ngFor="let status of status">{{status}}</option>
+                                    
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label> Reason <span  class="text-danger">*</span></label>
+                                <textarea input type="text" class="form-control" id="reason" required [(ngModel)]="absence.reason" name="reason" placeholder="Enter your reason here" rows="4"></textarea></div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="m-t-20 text-center">
+                                <!---->
+                                <button class="btn btn-primary" type="submit">Add </button></div>
+                        </div>
+                    </form>
+                    <div [hidden]="!submitted">
+                        <h4>You submitted successfully!</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

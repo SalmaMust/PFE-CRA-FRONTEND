@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row page-title align-items-center">
 
-        <div class="col-md-3 col-xl-6">
+        <div class="col-md-3 col-xl-5">
 
             <h4 class="mb-1 mt-0">Absence Details </h4>
         </div>
@@ -19,7 +19,6 @@
                                     <label class="col-lg-2 col-form-label" for="name">Type</label>
                                     <div class="col-lg-10">
                                         <select class="form-control" id="type" formControlName="name" required [(ngModel)]="absence.type" name="type" [value]="absence.type">
-                                            <!-- <option>Choose type Absence</option> -->
                                             <option *ngFor="let type of typeAbsence">{{type}}</option>
                                         
                                         </select>
@@ -45,7 +44,6 @@
                                     <label class="col-lg-2 col-form-label" for="name">Status</label>
                                     <div class="col-lg-10">
                                         <select class="form-control" id="status" formControlName="name" required [(ngModel)]="absence.status" name="status" [value]="absence.status">
-                                            <!-- <option>Choose status</option> -->
                                             <option *ngFor="let status of status">{{status}}</option>
                                         
                                         </select>
@@ -62,11 +60,77 @@
                         <h4>You submitted successfully!</h4>
                     </div>
                 </div>
-                <!-- end card-body -->
             </div>
-            <!-- end card-->
         </div>
-        <!-- end col -->
     </div>
 </div>
-<!-- end row -->
+-->
+
+<div class="container-fluid">
+    <div class="row page-title align-items-center">
+
+        <div class="col-md-3 col-xl-5">
+
+            <h4 class="mb-1 mt-0"> Edit Absence </h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <form (ngSubmit)="onSubmit()" novalidate="" class="ng-untouched ng-pristine ng-valid">
+                        <div class="col-md-5">
+                            <div class="form-group"><label> Type </label>
+                                <select class="form-control" id="type" formControlName="name" required [(ngModel)]="absence.type" name="type" [value]="absence.type">
+                                            <option *ngFor="let type of typeAbsence">{{type}}</option>
+                                        
+                                        </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="form-group"><label>Start Date</label>
+                                <input type="date" class="form-control" id="dateDebut" required [(ngModel)]="absence.startDate" [value]="absence.startDate| date:'yyyy-MM-dd'" name="dateDebut">
+                                <!---->
+
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group"><label>End Date</label>
+                                <input type="date" class="form-control" id="dateFin" required [(ngModel)]="absence.endDate" [value]="absence.endDate | date:'yyyy-MM-dd'" name="dateFin">
+
+                                <!---->
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="form-group"><label>Status </label>
+                                <select class="form-control" id="status" formControlName="name" required [(ngModel)]="absence.status" name="status" [value]="absence.status">
+                                    <option *ngFor="let status of status">{{status}}</option>
+                                    
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label> Reason </label>
+                                <textarea input type="text" class="form-control" id="reason" required [(ngModel)]="absence.reason" name="reason" rows="4"></textarea></div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="m-t-20 text-center">
+                                <!---->
+                                <button class="btn btn-primary" type="submit">Save Changes</button></div>
+                        </div>
+                    </form>
+                    <div [hidden]="!submitted">
+                        <h4>You submitted successfully!</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

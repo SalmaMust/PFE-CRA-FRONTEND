@@ -24,7 +24,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-2 col-md-3 col-md-2">
+                                <div class="col-sm-2 col-md-2 col-md-2">
                                     <div class="form-group form-focus">
 
                                         <label class="form-group" for="name">Start Date</label>
@@ -33,7 +33,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-2 col-md-3 col-md-3">
+                                <div class="col-sm-2 col-md-2 col-md-2">
                                     <div class="form-group form-focus">
 
                                         <label class="form-group" for="name">End Date </label>
@@ -58,7 +58,15 @@
 
 
                                 </div>
+                                <div class="col-sm-2 col-md-2 col-md-2">
+                                    <div class="form-group form-focus">
 
+                                        <label class="form-group" for="name">Reason </label>
+                                        <div class="col-xs-6">
+                                            <input type="text" class="form-control" id="reason" required [(ngModel)]="absence.reason" name="reason">
+                                        </div>
+                                    </div>
+                                </div>
                             </div> <button type="submit" class="btn btn-soft-primary btn-lg float-right ">ADD</button>
 
                         </div>
@@ -100,6 +108,7 @@
                                     <th scope="col">Start Date</th>
                                     <th scope="col">End Date</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Reason</th>
 
                                     <th scope="col">Actions</th>
                                 </tr>
@@ -112,6 +121,7 @@
                                     <td>{{absence.startDate| date:'yyyy-MM-dd'}}</td>
                                     <td>{{absence.endDate| date:'yyyy-MM-dd'}}</td>
                                     <td>{{absence.status}}</td>
+                                    <td>{{absence.reason}}</td>
 
                                     <td><button (click)="deleteAbsence(absence.id)" class="btn btn-soft-danger">Delete</button>
                                         <button (click)="absenceDetails(absence.id)" class="btn btn-soft-warning" style="margin-left: 10px">Details</button>

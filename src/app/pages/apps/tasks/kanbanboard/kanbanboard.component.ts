@@ -151,4 +151,5 @@ export class KanbanboardComponent implements OnInit {
     //this.router.navigate(['espace-administration/details/'+id]);
     this.router.navigate(['task-details/'+id]);
   }
+  
 }

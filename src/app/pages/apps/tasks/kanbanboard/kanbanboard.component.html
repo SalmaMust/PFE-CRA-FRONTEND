@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="col text-right">
-                            <button class="btn btn-primary" id="btn-new-event"><i class="uil-plus mr-1"></i>Add
+                            <button class="btn btn-soft-primary" (click)="goToAdd()" id="btn-new-event"><i class="uil-plus mr-1"></i>Add
                                 New</button>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item" (click)="taskDetails(task.id)"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item" (click)="goToAdd()"><i class="uil uil-user-plus mr-2"></i>Add
+                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-user-plus mr-2"></i>Add
                         People</a>
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item text-warning"><i

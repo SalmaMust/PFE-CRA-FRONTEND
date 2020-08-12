@@ -6,4 +6,5 @@ export class Absence {
     startDate: Date; 
     endDate: Date; 
     status: string;
+    reason: string;
 }
