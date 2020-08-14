@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../project.service';
-import { Project } from 'src/app/core/models/project.models';
+import { Project, Widget } from 'src/app/core/models/project.models';
 import { Router } from '@angular/router';
 import { ClientService } from '../../client/client.service';
 import { Client } from 'src/app/core/models/client.models';
@@ -14,18 +14,25 @@ import { Client } from 'src/app/core/models/client.models';
 export class ProjectDetailsComponent implements OnInit {
   project: Project ;
   clients : Client[];
-
   submitted: Boolean = false;
 
   constructor( private projectService: ProjectService , private clientService: ClientService,private activeRoute: ActivatedRoute, private router: Router) { }
 
+  
+
+    /**
+     * Fetches the project data
+     */
+  
+ 
   ngOnInit(): void {
 
     this.getProjectByid();
     this.getAllClients();
     console.log(this.clients);
-  }
 
+  }
+ 
   getProjectByid(){
     const id: string = this.activeRoute.snapshot.params.id;
     this.projectService.getProjectById(id)

@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { UIModule } from '../../../shared/ui/ui.module';
 import { NgbTabsetModule, NgbProgressbarModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-import { ListTimesheetComponent } from './list-timesheet/list-timesheet.component';
 import { TimesheetRoutingModule } from './timesheet-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ListTimesheetComponent } from './list-timesheet/list-timesheet.component';
 
 
 

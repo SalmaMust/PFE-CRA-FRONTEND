@@ -9,5 +9,8 @@ export class User {
     role: string;
     phone: string; 
     accessToken: string;
- 
+ date:Date;
+ address: string;
+ birthday: Date;
+ gendar:string;
 }

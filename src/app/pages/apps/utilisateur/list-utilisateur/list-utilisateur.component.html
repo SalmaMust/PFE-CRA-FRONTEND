@@ -16,23 +16,40 @@
             <div class="card">
                 <div class="card-body">
 
-                    <div class="table-responsive">
+                    <div class="table table-striped mb-0">
                         <table class="table m-0">
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Email</th>
+                                    <th>Username</th>
                                     <th>firstName</th>
                                     <th>Lastname</th>
-                                    <th>Email</th>
+                                    <th>Birthday</th>
+                                    <th>Address</th>
+                                    <th>Gendar</th>
+                                    <th>Phone</th>
+                                    <th>Role</th>
+                                    <th>Poste</th>
+                                    <th>Joining Date</th>
+
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let user of dataSource">
                                     <td>{{user.id}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.username}}</td>
                                     <td>{{user.firstname}}</td>
                                     <td>{{user.lastname}}</td>
-                                    <td>{{user.email}}</td>
+                                    <td>{{user.birthday| date:'yyyy-MM-dd'}}</td>
+                                    <td>{{user.address}}</td>
+                                    <td>{{user.gendar}}</td>
+                                    <td>{{user.phone}}</td>
+                                    <td>{{user.role}}</td>
+                                    <td>{{user.poste}}</td>
+                                    <td>{{user.date| date:'yyyy-MM-dd'}}</td>
                                     <td><button (click)="deleteUser(user.id)" class="btn btn-danger">Delete</button>
                                         <button (click)="userDetails(user.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
                                     </td>

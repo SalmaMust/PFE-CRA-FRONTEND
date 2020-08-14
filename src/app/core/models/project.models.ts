@@ -14,9 +14,11 @@ export class Project {
 }
 
 
-
-
-
+export interface Widget {
+    icon: string;
+    value: number;
+    text: string;
+}
 
 const widgetData = [
     {
@@ -40,3 +42,4 @@ const widgetData = [
         text: 'Total Hours Spent'
     },
 ];
+

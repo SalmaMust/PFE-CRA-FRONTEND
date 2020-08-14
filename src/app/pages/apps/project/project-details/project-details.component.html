@@ -18,14 +18,14 @@
                                     <label class="col-lg-2 col-form-label" for="name">Project Name</label>
                                     <div class="col-lg-8">
 
-                                        <input type="text" class="form-control" id="projectName" required [(ngModel)]="project.projectName" name="projectName">
+                                        <input type="badge" class="form-control" id="projectName" required [(ngModel)]="project.projectName" name="projectName">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label" for="name">Description</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" id="description" required [(ngModel)]="project.description" name="description">
+                                        <input type="badge" class="form-control" id="description" required [(ngModel)]="project.description" name="description">
                                     </div>
                                 </div>
 
@@ -100,7 +100,7 @@
                 Project: {{project.projectName}}
             </h4>
         </div>
-        <div class="col-sm-4 col-xl-6 text-sm-right">
+        <div class="col-sm-4 col-xl-6 badge-sm-right">
             <div class="btn-group ml-2 d-none d-sm-inline-block">
                 <button type="button" class="btn btn-soft-primary btn-sm"><i class="uil uil-edit mr-1"></i>Edit</button>
             </div>
@@ -138,13 +138,13 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
                             <div class="mt-4">
-                                <p class="mb-2"><i class="uil-calender text-danger"></i> Start Date</p>
+                                <p class="mb-2"><i class="uil-calender badge-danger"></i> Start Date</p>
                                 <h5 class="font-size-16">{{project.dateDebut}}</h5>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="mt-4">
-                                <p class="mb-2"><i class="uil-calendar-slash text-danger"></i> Due Date</p>
+                                <p class="mb-2"><i class="uil-calendar-slash badge-danger"></i> Due Date</p>
                                 <h5 class="font-size-16">{{project.dateFin}}</h5>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
 
                         <div class="col-lg-3 col-md-6">
                             <div class="mt-4">
-                                <p class="mb-2"><i class="uil-user text-danger"></i> Owner</p>
+                                <p class="mb-2"><i class="uil-user badge-danger"></i> Owner</p>
                                 <h5 class="font-size-16">{{project.client.firstname}}</h5>
                             </div>
                         </div>
@@ -186,7 +186,7 @@
                             <div class="col-md-6">
                                 <label class="form-group" for="name">Project Name</label>
 
-                                <input type="text" class="form-control" id="projectName" required [(ngModel)]="project.projectName" name="projectName">
+                                <input type="badge" class="form-control" id="projectName" required [(ngModel)]="project.projectName" name="projectName">
                             </div>
                             <div class="col-md-6">
                                 <label class="form-group" for="name"> Clients</label>
@@ -249,21 +249,21 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group"><label>Add Project Leader</label><input class="form-control ng-untouched ng-pristine ng-valid" name="leader" type="text"></div>
+                                <div class="form-group"><label>Add Project Leader</label><input class="form-control ng-untouched ng-pristine ng-valid" name="leader" type="badge"></div>
                             </div>
 
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group"><label>Add Team</label><input class="form-control" type="text"></div>
+                                <div class="form-group"><label>Add Team</label><input class="form-control" type="badge"></div>
                             </div>
 
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea input type="text" class="form-control" id="description" required [(ngModel)]="project.description" name="description" placeholder="Enter your message here" rows="4"></textarea>
+                            <textarea input type="badge" class="form-control" id="description" required [(ngModel)]="project.description" name="description" placeholder="Enter your message here" rows="4"></textarea>
                         </div>
-                        <div class="m-t-20 text-center">
+                        <div class="m-t-20 badge-center">
                             <button class="btn btn-primary" type="submit">Edit Project</button>
                         </div>
                     </form>
@@ -272,3 +272,6 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>

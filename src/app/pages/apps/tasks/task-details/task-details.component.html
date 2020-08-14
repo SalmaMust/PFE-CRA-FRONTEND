@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row page-title align-items-center">
 
         <div class="col-md-3 col-xl-6">
@@ -87,11 +87,100 @@
                         <h4>You submitted successfully!</h4>
                     </div>
                 </div>
-                <!-- end card-body -->
             </div>
-            <!-- end card-->
         </div>
-        <!-- end col -->
     </div>
 </div>
-<!-- end row -->
+ -->
+
+<div class="container-fluid">
+    <div class="row page-title align-items-center">
+
+        <div class="col-md-3 col-xl-6">
+
+            <h4 class="mb-1 mt-0">Edit Task </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+
+                    <form novalidate="" (ngSubmit)="onSubmit()" class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label class="form-group" for="name">task Name</label>
+
+                                <input type="text" class="form-control" id="taskName" required [(ngModel)]="task.taskName" name="taskName">
+                            </div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-5">
+                                <div class="form-group"><label>Due Date</label>
+                                    <input type="date" class="form-control" id="date" required [(ngModel)]="task.date" [value]="task.date | date:'yyyy-MM-dd'" name="date">
+                                    <!---->
+                                    <div class="selectiongroup">
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-5">
+                                <div class="form-group"><label>Status</label>
+                                    <select class=" form-control " [(ngModel)]="task.status " name="status ">
+                                        <option selected> Completed </option>
+                                        <option>In Progress</option> 
+                                        <option>Pending</option> 
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group"><label>Priority</label>
+                                    <select class="form-control" [(ngModel)]="task.priorite " name="priorite">
+                                        <option selected >High</option>
+                                        <option  >Medium</option>
+                                        <option  >Low</option></select></div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group"><label>Employée</label>
+
+                                    <select class="form-control " [(ngModel)]="task.user " name="user ">
+                                <option *ngFor="let user of users " [ngValue]="user ">
+                                    {{user.firstname}}
+                                </option>
+                            </select>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group"><label> Projet</label>
+
+                                    <select class="form-control " [(ngModel)]="task.project " name="projet ">
+                                <option *ngFor="let prj of projects " [ngValue]="prj ">
+                                    {{prj.projectName}}
+                                </option>
+                            </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="m-t-20 text-center">
+                            <button class="btn btn-primary" type="submit">Edit</button>
+                        </div>
+                    </form>
+                    <div [hidden]="!submitted">
+                        <h4>You submitted successfully!</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
