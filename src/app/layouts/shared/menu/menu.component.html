@@ -4,7 +4,7 @@
 
 <ul class="metismenu" id="side-menu" #sideMenu>
   <ng-container *ngFor="let item of menuItems">
-    <li class="side-nav-title side-nav-item menu-title" *ngIf="item.isTitle">{{ item.label }}</li>
+    <li class="side-nav-title side-nav-item menu-title" *ngIf="item.isTitle && userRole=='admin' ">{{ item.label }}</li>
 
     <li *ngIf="!item.isTitle" >
 

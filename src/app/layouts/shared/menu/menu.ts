@@ -1,27 +1,34 @@
 import { MenuItem } from './menu.model';
 
+
+
 export const MENU: MenuItem[] = [
     {
         label: 'Navigation',
-        isTitle: true
+        isTitle: true,
+        role:'admin'
     },
     {
         label: 'Dashboard',
         icon: 'home',
         link: '/',
+        role:'admin',
         badge: {
             variant: 'success',
             text: '1',
         }
+        
     },
     {
         label: 'Apps',
-        isTitle: true
+        isTitle: true,
+        role:'admin'
     },
     {
       label: 'Calendar',
         icon: 'calendar',
         link: '/apps-calendar',
+        role: 'admin',
     },
     //{
       //  label: 'Email',
@@ -45,6 +52,7 @@ export const MENU: MenuItem[] = [
     {
         label: 'User',
         icon: 'briefcase',
+        role:'admin',
         subItems: [
             {
                 label: 'List',
@@ -56,26 +64,31 @@ export const MENU: MenuItem[] = [
         
             label: 'Client',
             icon: 'bookmark',
+            role:'admin',
             subItems: [
                 {
                     label: 'List',
                     link: '/apps/list-client',
+                    role:'admin',
                 },
             ]
     },
     {
         label: 'Project',
         icon: 'briefcase',
+        role:'admin',
         subItems: [
             {
                 label: 'List',
                 link: '/apps/project-list',
+                role:'admin',
             }
         ]
     },
     {
         label: 'Tasks',
         icon: 'bookmark',
+        role:'admin',
         subItems: [
             {
                 label: 'List',
@@ -90,6 +103,7 @@ export const MENU: MenuItem[] = [
     {
       label: 'Absence',
       icon: 'bookmark',
+      role:'admin',
       subItems: [
           {
               label: 'List',
@@ -101,6 +115,7 @@ export const MENU: MenuItem[] = [
   {
         label: 'Timesheet',
         icon: 'briefcase',
+        role:'admin',
         subItems: [
             {
                 label: 'List',
@@ -231,3 +246,72 @@ export const MENU: MenuItem[] = [
     //    ]
   //  }
 ];
+
+
+export const MENU_EMPLOYEE: MenuItem[] = [
+  {
+      label: 'Apps',
+      isTitle: true,
+      role:'admin'
+  },
+  {
+    label: 'Calendar',
+      icon: 'calendar',
+      link: '/apps-calendar',
+      role: 'admin',
+  }, 
+  {
+      /*label: 'Project',
+      icon: 'briefcase',
+      role:'admin',
+      subItems: [
+          {
+              label: 'List',
+              link: '/apps/project-list',
+              role:'admin',
+          }
+      ]*/
+      label: 'Mes projets',
+      icon: 'briefcase',
+      link: '/apps/project-list',
+  },
+  {
+      label: 'Tasks',
+      icon: 'bookmark',
+      role:'admin',
+      subItems: [
+          {
+              label: 'List',
+              link: '/apps/list-task',
+          }, {
+            label: 'Kanban Board',
+            link: '/apps/task-board',
+        }
+         
+      ]
+  },
+  {
+    label: 'Absence',
+    icon: 'bookmark',
+    role:'admin',
+    subItems: [
+        {
+            label: 'List',
+            link: '/apps/list-absence',
+        }
+       
+    ]
+},
+{
+      label: 'Timesheet',
+      icon: 'briefcase',
+      role:'admin',
+      subItems: [
+          {
+              label: 'List',
+              link: '/apps/list-timesheet',
+          }
+    
+      ]
+  }
+ ];

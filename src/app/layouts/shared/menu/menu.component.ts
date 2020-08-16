@@ -4,8 +4,10 @@ import { Router, NavigationEnd } from '@angular/router';
 import MetisMenu from 'metismenujs/dist/metismenujs';
 
 import { activateMenuItems, resetMenuItems } from './utils';
-import { MENU } from './menu';
+import { MENU, MENU_EMPLOYEE } from './menu';
 import { MenuItem } from './menu.model';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { User } from 'src/app/core/models/auth.models';
 
 @Component({
   selector: 'app-menu',
@@ -19,11 +21,18 @@ export class MenuComponent implements OnInit, AfterViewInit, OnChanges {
   sidebarScrollRef: any;
 
   menu: any;
+  //userRole = 'admin';
 
   menuItems = [];
   @ViewChild('sideMenu', { static: false }) sideMenu: ElementRef;
 
+
+    public currentUser: User; 
+    
   constructor(router: Router) {
+    //constructor(private http: HttpClient, private cookieService: CookieService) {
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  //}
     router.events.forEach((event) => {
       if (event instanceof NavigationEnd) {
         this._activateMenuDropdown();
@@ -92,7 +101,17 @@ export class MenuComponent implements OnInit, AfterViewInit, OnChanges {
    * Initilize
    */
   initialize(): void {
-    this.menuItems = MENU;
+    //console.log(":,k:nln,lnlknl");
+    //console.log(this.currentUser.role);
+    
+    if (this.currentUser.role === "Admin") {
+      this.menuItems = MENU;
+    }
+    else{
+      this.menuItems = MENU_EMPLOYEE;
+    }
+    
+  
   }
 
   /**
