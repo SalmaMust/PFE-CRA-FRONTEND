@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Task } from 'src/app/core/models/task.models';
+import { User } from 'src/app/core/models/auth.models';
 
 
 
@@ -12,10 +13,13 @@ import { Task } from 'src/app/core/models/task.models';
 })
 export class TaskService {
 task: Task;
+currentUser: User; 
+id: String;
 
 
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
 
 
   public delete(id: string){
@@ -25,12 +29,18 @@ task: Task;
 public createTask(client) {
   return this.http.post(`http://localhost:8000/api/task`, client);
 } 
-public getlistTask() {
-
+public getlistTask() {  
   console.log("api get all");
+  if (this.currentUser.role === "User"){
+     this.id = this.currentUser.id;
+    return this.http.get<Task[]>(`http://localhost:8000/api/${this.id}/usertasks`);  
+  }
+  else
+  { 
+    return this.http.get<Task[]>(`http://localhost:8000/api/tasks`);
+ }
+ 
   
-
-  return this.http.get<Task[]>(`http://localhost:8000/api/tasks`);
 }
 
 public getTaskById(id: String){
