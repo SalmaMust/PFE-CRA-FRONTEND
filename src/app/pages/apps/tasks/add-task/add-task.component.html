@@ -3,7 +3,7 @@
 
         <div class="col-md-3 col-xl-6">
 
-            <h4 class="mb-1 mt-0">Create project </h4>
+            <h4 class="mb-1 mt-0">Create task </h4>
         </div>
     </div>
     <div class="row">
@@ -16,23 +16,23 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label" for="name">projectName</label>
+                                    <label class="col-lg-2 col-form-label" for="name">taskName</label>
                                     <div class="col-lg-10">
 
-                                        <input type="text" class="form-control" id="projectName" required [(ngModel)]="project.projectName" name="projectName">
+                                        <input type="text" class="form-control" id="taskName" required [(ngModel)]="task.taskName" name="taskName">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label" for="name">Date</label>
                                     <div class="col-lg-10">
 
-                                        <input type="date" class="form-control" id="date" required [(ngModel)]="project.date" name="date" [value]="project.date | date:'yyyy-MM-dd'">
+                                        <input type="date" class="form-control" id="date" required [(ngModel)]="task.date" name="date" [value]="task.date | date:'yyyy-MM-dd'">
                                     </div>
                                 </div>
                                 <div class=" form-group row ">
                                     <label class="col-lg-2 col-form-label " for="name ">Status</label>
                                     <div class="col-lg-10 ">
-                                        <select class="form-control " [(ngModel)]="project.status " name="status ">
+                                        <select class="form-control " [(ngModel)]="task.status " name="status ">
                                             <option selected> todo </option>
                                             <option>inprogress</option> 
                                             <option>review</option>
@@ -44,7 +44,7 @@
                                 <div class="form-group row ">
                                     <label class="col-lg-2 col-form-label " for="name ">Priorité</label>
                                     <div class="col-lg-10 ">
-                                        <select class="form-control " [(ngModel)]="project.priorite " name="priorite ">
+                                        <select class="form-control " [(ngModel)]="task.priorite " name="priorite ">
                                             <option selected> Low </option>
                                             <option>Normal</option> 
                                             <option>Medium</option> 
@@ -57,7 +57,7 @@
                                     <label class="col-lg-2 col-form-label " for="name "> Employée</label>
                                     <div class="col-lg-10 ">
 
-                                        <select class="form-control " [(ngModel)]="project.user " name="user ">
+                                        <select class="form-control " [(ngModel)]="task.user " name="user ">
                                     <option *ngFor="let user of users " [ngValue]="user ">
                                         {{user.firstname}}
                                     </option>
@@ -68,9 +68,9 @@
                                     <label class="col-lg-2 col-form-label " for="name "> Projet</label>
                                     <div class="col-lg-10 ">
 
-                                        <select class="form-control " [(ngModel)]="project.project " name="projet ">
-                                    <option *ngFor="let prj of projects " [ngValue]="prj ">
-                                        {{prj.projectName}}
+                                        <select class="form-control " [(ngModel)]="task.task " name="projet ">
+                                    <option *ngFor="let prj of tasks " [ngValue]="prj ">
+                                        {{prj.taskName}}
                                     </option>
                                 </select>
                                     </div>
@@ -131,19 +131,23 @@
 
                             <div class="col-md-5">
                                 <div class="form-group" for="name "><label>Status<span  class="text-danger">*</span></label>
-                                    <select class="select form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="task.status " name="status ">
-                                        <option selected> Completed </option>
-                                        <option>In Progress</option> 
-                                        <option>Pending</option> 
+                                    <select class="form-control " [(ngModel)]="task.status " name="status ">
+                                        <option selected> todo </option>
+                                        <option>inprogress</option> 
+                                        <option>review</option>
+                                        <option>done</option> 
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <div class="form-group"><label>Priority<span  class="text-danger">*</span></label>
+                                <div class="form-group" for="name "><label>Priority<span  class="text-danger">*</span></label>
                                     <select class="form-control" [(ngModel)]="task.priorite " name="priorite">
-                                        <option selected >High</option>
-                                        <option  >Medium</option>
-                                        <option  >Low</option></select></div>
+                                        <option selected> Low </option>
+                                        <option>Normal</option> 
+                                        <option>Medium</option> 
+                                        <option>High</option></select></div>
+
+
                             </div>
                             <div class="col-md-5">
                                 <div class="form-group"><label>Employée<span  class="text-danger">*</span></label>

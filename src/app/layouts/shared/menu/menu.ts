@@ -3,6 +3,7 @@ import { MenuItem } from './menu.model';
 
 
 export const MENU: MenuItem[] = [
+    
     {
         label: 'Navigation',
         isTitle: true,
@@ -25,30 +26,16 @@ export const MENU: MenuItem[] = [
         role:'admin'
     },
     {
+        label: 'Profil',
+        icon: 'file-text',
+        link: '/other/pages-profile'
+    },
+    {
       label: 'Calendar',
         icon: 'calendar',
         link: '/apps-calendar',
         role: 'admin',
     },
-    //{
-      //  label: 'Email',
-        //icon: 'inbox',
-        //subItems: [
-          //  {
-            //    label: 'Inbox',
-              //  link: '/apps/email-inbox',
-            //},
-            //{
-              //  label: 'Read',
-                //link: '/apps/email-read'
-            //},
-            //{
-              //  label: 'Compose',
-                //link: '/apps/email-compose'
-            //},
-        //]
-    //},
-    
     {
         label: 'User',
         icon: 'briefcase',
@@ -124,127 +111,7 @@ export const MENU: MenuItem[] = [
       
         ]
     }
-    //{
-        //label: 'Custom',
-      //  isTitle: true
-    //},
-    //{
-        //label: 'Pages',
-        //icon: 'file-text',
-        //subItems: [
-            //{
-                //label: 'Starter',
-              //  link: '/other/pages-starter'
-            //},
-            //{
-                //label: 'Profile',
-              //  link: '/other/pages-profile'
-            //},
-            //{
-                //label: 'Activity',
-              //  link: '/other/pages-activity'
-            //},
-            //{
-               // label: 'Invoice',
-              //  link: '/other/pages-invoice'
-            //},
-            //{
-                //label: 'Pricing',
-              //  link: '/other/pages-pricing'
-            //},
-            //{
-                //label: 'Error 404',
-              //  link: '/other/pages-error-404'
-            //},
-            //{
-            //    label: 'Error 500',
-          //      link: '/other/pages-error-500'
-        //    },
-      //  ]
-    //},
-    //{
-        //label: 'components',
-      //  isTitle: true
-    //},
-    //{
-        //label: 'UI Elements',
-        //icon: 'package',
-        //subItems: [
-            //{
-                //label: 'Bootstrap UI',
-              //  link: '/ui/bootstrap'
-            //},
-            //{
-            //    label: 'Icons',
-                //link: '/ui/icons',
-                //subItems: [
-                    //{
-                       // label: 'Feather Icons',
-                     //   link: '/ui/icon-feather'
-                   // },
-                    //{
-                    //    label: 'Unicons Icons',
-                  //      link: '/ui/icon-unicons'
-                //    },
-              //  ]
-            //},
-            //{
-          //      label: 'Widgets',
-        //        link: '/ui/widgets'
-      //      }
-      //  ]
-    //},
-    //{
-        //label: 'Forms',
-        //link: '/ui/form',
-        //icon: 'file-text',
-        //subItems: [
-            //{
-                //label: 'Basic Elements',
-              //  link: '/ui/forms-basic'
-            //},
-            //{
-                //label: 'Advanced',
-              //  link: '/ui/forms-advanced'
-            //},
-            //{
-                //label: 'Validation',
-              //  link: '/ui/forms-validation'
-            //},
-            //{
-                //label: 'Wizard',
-              //  link: '/ui/forms-wizard'
-            //},
-            //{
-                //label: 'Editor',
-              //  link: '/ui/forms-editor'
-            //},
-            //{
-            //    label: 'File Uploads',
-          //      link: '/ui/forms-uploads'
-        //    },
-      //  ]
-    //},
-    //{
-        //label: 'Charts',
-        //link: '/ui/charts',
-      //  icon: 'pie-chart'
-    //},
-    //{
-        //label: 'Tables',
-        //link: '/ui/tables',
-        //icon: 'grid',
-        //subItems: [
-            //{
-                //label: 'Basic',
-              //  link: '/ui/tables-basic'
-            //},
-            //{
-          //      label: 'Advanced',
-        //        link: '/ui/tables-advanced'
-      //      },
-    //    ]
-  //  }
+    
 ];
 
 
@@ -254,6 +121,11 @@ export const MENU_EMPLOYEE: MenuItem[] = [
       isTitle: true,
       role:'admin'
   },
+  {
+    label: 'Mon profil',
+    icon: 'file-text',
+    link: '/other/pages-profile'
+},
   {
     label: 'Calendar',
       icon: 'calendar',
@@ -276,7 +148,7 @@ export const MENU_EMPLOYEE: MenuItem[] = [
       link: '/apps/project-list',
   },
   {
-      label: 'Tasks',
+      label: 'Mes tâches',
       icon: 'bookmark',
       role:'admin',
       subItems: [
@@ -291,27 +163,145 @@ export const MENU_EMPLOYEE: MenuItem[] = [
       ]
   },
   {
-    label: 'Absence',
+    label: 'Mes absences',
     icon: 'bookmark',
-    role:'admin',
-    subItems: [
-        {
-            label: 'List',
-            link: '/apps/list-absence',
-        }
+    link: '/apps/list-absence',
+        
        
-    ]
+    
 },
 {
-      label: 'Timesheet',
+      label: 'Mes feuilles',
+      icon: 'briefcase',
+      link: '/apps/list-timesheet',
+         
+  } ];
+
+
+export const MENU_MANAGER: MenuItem[] = [
+  {
+      label: 'Apps',
+      isTitle: true,
+      role:'admin'
+  },
+  {
+    label: 'Mon profil',
+    icon: 'file-text',
+    link: '/other/pages-profile'
+},
+  {
+    label: 'Calendar',
+      icon: 'calendar',
+      link: '/apps-calendar',
+      role: 'admin',
+  }, 
+  {
+    label: 'Mes employés',
+    icon: 'briefcase',
+    link: '/apps/utilisateur-list',
+       
+},
+  {
+      /*label: 'Project',
       icon: 'briefcase',
       role:'admin',
       subItems: [
           {
               label: 'List',
-              link: '/apps/list-timesheet',
+              link: '/apps/project-list',
+              role:'admin',
           }
-    
+      ]*/
+      label: 'Mes projets',
+      icon: 'briefcase',
+      link: '/apps/project-list',
+  },
+  {
+      label: 'Mes tâches',
+      icon: 'bookmark',
+      role:'admin',
+      subItems: [
+          {
+              label: 'List',
+              link: '/apps/list-task',
+          }, {
+            label: 'Kanban Board',
+            link: '/apps/task-board',
+        }
+         
       ]
+  },
+  {
+    label: 'Mes absences',
+    icon: 'bookmark',
+    link: '/apps/list-absence',
+       
+},
+{
+      label: 'Mes feuilles',
+      icon: 'briefcase',
+      link: '/apps/list-timesheet'
+  } ];
+
+
+export const MENU_RESPONSABLE: MenuItem[] = [
+    
+  {
+      label: 'Apps',
+      isTitle: true,
+      role:'admin'
+  },
+  {
+    label: 'Mon profil',
+    icon: 'file-text',
+    link: '/other/pages-profile'
+},
+  {
+    label: 'Calendar',
+      icon: 'calendar',
+      link: '/apps-calendar',
+      role: 'admin',
+  }, 
+  {
+      /*label: 'Project',
+      icon: 'briefcase',
+      role:'admin',
+      subItems: [
+          {
+              label: 'List',
+              link: '/apps/project-list',
+              role:'admin',
+          }
+      ]*/
+      label: 'Mes projets',
+      icon: 'briefcase',
+      link: '/apps/project-list',
+  },
+  {
+      label: 'Mes tâches',
+      icon: 'bookmark',
+      role:'admin',
+      subItems: [
+          {
+              label: 'List',
+              link: '/apps/list-task',
+          }, {
+            label: 'Kanban Board',
+            link: '/apps/task-board',
+        }
+         
+      ]
+  },
+  {
+    label: 'Mes absences',
+    icon: 'bookmark',
+    link: '/apps/list-absence',
+     
+},
+{
+      label: 'Mes feuilles ',
+      icon: 'briefcase',
+      link: '/apps/list-timesheet',
+          
   }
- ];
+   ];

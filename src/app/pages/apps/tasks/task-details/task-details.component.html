@@ -132,20 +132,24 @@
                         <div class="row">
 
                             <div class="col-md-5">
-                                <div class="form-group"><label>Status</label>
-                                    <select class=" form-control " [(ngModel)]="task.status " name="status ">
-                                        <option selected> Completed </option>
-                                        <option>In Progress</option> 
-                                        <option>Pending</option> 
+                                <div class="form-group" for="name "><label>Status<span  class="text-danger">*</span></label>
+                                    <select class="form-control " [(ngModel)]="task.status " name="status ">
+                                        <option selected> todo </option>
+                                        <option>inprogress</option> 
+                                        <option>review</option>
+                                        <option>done</option> 
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <div class="form-group"><label>Priority</label>
+                                <div class="form-group" for="name "><label>Priority<span  class="text-danger">*</span></label>
                                     <select class="form-control" [(ngModel)]="task.priorite " name="priorite">
-                                        <option selected >High</option>
-                                        <option  >Medium</option>
-                                        <option  >Low</option></select></div>
+                                        <option selected> Low </option>
+                                        <option>Normal</option> 
+                                        <option>Medium</option> 
+                                        <option>High</option></select></div>
+
+
                             </div>
                             <div class="col-md-5">
                                 <div class="form-group"><label>Employée</label>

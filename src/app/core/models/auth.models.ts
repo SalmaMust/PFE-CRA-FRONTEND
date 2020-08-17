@@ -13,4 +13,6 @@ export class User {
  address: string;
  birthday: Date;
  gendar:string;
+ about:string;
+
 }

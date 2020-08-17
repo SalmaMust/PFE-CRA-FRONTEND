@@ -4,7 +4,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import MetisMenu from 'metismenujs/dist/metismenujs';
 
 import { activateMenuItems, resetMenuItems } from './utils';
-import { MENU, MENU_EMPLOYEE } from './menu';
+import { MENU, MENU_EMPLOYEE, MENU_RESPONSABLE, MENU_MANAGER } from './menu';
 import { MenuItem } from './menu.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from 'src/app/core/models/auth.models';
@@ -106,6 +106,12 @@ export class MenuComponent implements OnInit, AfterViewInit, OnChanges {
     
     if (this.currentUser.role === "Admin") {
       this.menuItems = MENU;
+    }
+    else if (this.currentUser.role === "Responsable") {
+      this.menuItems = MENU_RESPONSABLE;
+    }
+    else if (this.currentUser.role === "Manager") {
+      this.menuItems = MENU_MANAGER;
     }
     else{
       this.menuItems = MENU_EMPLOYEE;
