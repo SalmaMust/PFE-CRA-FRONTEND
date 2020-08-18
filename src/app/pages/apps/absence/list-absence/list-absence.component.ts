@@ -6,6 +6,8 @@ import { AbsenceProfilService } from 'src/app/core/services/absence.service';
 import { Absence } from 'src/app/core/models/absence.models';
 import { AbsenceService } from '../absence.service';
 import { FormBuilder } from "@angular/forms";
+import { User } from 'src/app/core/models/auth.models';
+import { UserService } from '../../utilisateur/user.service';
 
 @Component({
   selector: 'app-list-absence',
@@ -19,8 +21,8 @@ export class ListAbsenceComponent implements OnInit {
   dataSource : Absence[];
   selectValue: string[];
   submitted = false;
-
-  constructor(public fb: FormBuilder,private absenceService : AbsenceService,  private router: Router) { }
+users: User[];
+  constructor(public fb: FormBuilder,private userService: UserService,private absenceService : AbsenceService,  private router: Router) { }
   typeAbsenceForm = this.fb.group({
     name: ['']
   })
@@ -29,6 +31,7 @@ export class ListAbsenceComponent implements OnInit {
   })
   ngOnInit() {
     this.getAllAbsences();
+    this.getAllUsers();
   }
 
   public getAllAbsences = () => {
@@ -78,7 +81,21 @@ export class ListAbsenceComponent implements OnInit {
     //this.router.navigate(['espace-administration/details/'+id]);
     this.router.navigate(['absence-details/'+id]);
   }
+  public getAllUsers = () => {
+    console.log('aaaaaa');
+    this.userService.getlistUser()
+    .subscribe(res => {
+   //this.isLoading = false;
 
+     this.users = res as User[];
+      console.log(res);
+
+    },
+    (error) => {
+      //this.errorService.handleError(error);
+      console.log(error);
+    })
+  }
   newUser(): void {
     this.submitted = false;
     this.absence = new Absence();
