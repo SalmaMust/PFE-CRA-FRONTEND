@@ -6,6 +6,7 @@ import { NgbTabsetModule, NgbProgressbarModule, NgbTooltipModule } from '@ng-boo
 import { TimesheetRoutingModule } from './timesheet-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListTimesheetComponent } from './list-timesheet/list-timesheet.component';
+import { DetailTimesheetComponent } from './detail-timesheet/detail-timesheet.component';
 
 
 
@@ -20,7 +21,7 @@ import { ListTimesheetComponent } from './list-timesheet/list-timesheet.componen
         FormsModule, 
         ReactiveFormsModule
     ],
-    declarations: [ListTimesheetComponent],
+    declarations: [ListTimesheetComponent, DetailTimesheetComponent],
 })
 
 export class TimesheetModule { }

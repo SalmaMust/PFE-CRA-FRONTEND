@@ -173,7 +173,7 @@ export const MENU_EMPLOYEE: MenuItem[] = [
 {
       label: 'Mes feuilles',
       icon: 'briefcase',
-      link: '/apps/list-timesheet',
+      link: '/apps/detail-timesheet',
          
   } ];
 
@@ -301,7 +301,7 @@ export const MENU_RESPONSABLE: MenuItem[] = [
 {
       label: 'Mes feuilles ',
       icon: 'briefcase',
-      link: '/apps/list-timesheet',
+      link: '/apps/detail-timesheet',
           
   }
    ];
