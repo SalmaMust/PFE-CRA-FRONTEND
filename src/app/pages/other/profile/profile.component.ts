@@ -11,6 +11,7 @@ import { TaskService } from '../../apps/tasks/task.service';
 import { Task } from 'src/app/core/models/task.models';
 import { UserService } from '../../apps/utilisateur/user.service';
 import { User } from 'src/app/core/models/auth.models';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -24,15 +25,15 @@ export class ProfileComponent implements OnInit {
 
   // bread crumb items
   breadCrumbItems: Array<{}>;
-  userData : User[];
   activities: Activity[];
   DATA : Task[];
   dataSource : Absence[];
   data : Project[];  
+  user: User ;
+  currentUser: User; 
+  id: String;
 
-  public currentUser: User; 
-
-  constructor(private userService : UserService,private taskService : TaskService,private projectService : ProjectService,private absenceService : AbsenceService) { 
+  constructor(private userService : UserService,private taskService : TaskService,private activeRoute: ActivatedRoute, private router: Router,private projectService : ProjectService,private absenceService : AbsenceService) { 
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
   }
@@ -44,23 +45,20 @@ export class ProfileComponent implements OnInit {
     this.getAllAbsences();
     this.getAllProjects();
     this.getAllTasks();
-
+ this.getUserByid();
+    
   }
-  public getAllUsers = () => {
-    console.log('aaaaaa');
-    this.userService.getlistUser()
-    .subscribe(res => {
-   //this.isLoading = false;
 
-     this.userData = res as User[];
-      console.log(res);
-
-    },
-    (error) => {
-      //this.errorService.handleError(error);
-      console.log(error);
-    })
+  getUserByid(){
+    const id: string = this.currentUser.id;
+    this.userService.getUserById(id)
+    .subscribe( user => {
+      this.user = user;
+      console.log(user);
+      
+          }) ;
   }
+ 
   public getAllAbsences = () => {
     console.log('aaaaaa');
     this.absenceService.getlistAbsence()

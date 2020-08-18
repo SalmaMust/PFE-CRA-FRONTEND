@@ -5,6 +5,8 @@ import { AbsenceService } from '../absence.service';
 import { Absence } from 'src/app/core/models/absence.models';
 import { Router } from '@angular/router';
 import { FormBuilder } from "@angular/forms";
+import { User } from 'src/app/core/models/auth.models';
+import { UserService } from '../../utilisateur/user.service';
 
 @Component({
   selector: 'app-absence-details',
@@ -15,13 +17,14 @@ import { FormBuilder } from "@angular/forms";
 export class AbsenceDetailsComponent implements OnInit {
   typeAbsence: any = ['CP', 'Maladie']
   status: any = ['Pending','refused','accepted']
+  users : User[];
 
   absence: Absence ;
   submitted: Boolean = false;
    
   
 
-  constructor( public fb: FormBuilder,private absenceService: AbsenceService ,private activeRoute: ActivatedRoute, private router: Router) {
+  constructor( public fb: FormBuilder,private userService: UserService,private absenceService: AbsenceService ,private activeRoute: ActivatedRoute, private router: Router) {
 
    }
    typeAbsenceForm = this.fb.group({
@@ -34,10 +37,25 @@ export class AbsenceDetailsComponent implements OnInit {
 
     this.getAbsenceByid();
     console.log(this.absence);
-    
+    this.getAllUsers();
+
     
   }
+  public getAllUsers = () => {
+    console.log('aaaaaa');
+    this.userService.getlistUser()
+    .subscribe(res => {
+   //this.isLoading = false;
 
+     this.users = res as User[];
+      console.log(res);
+
+    },
+    (error) => {
+      //this.errorService.handleError(error);
+      console.log(error);
+    })
+  }
   getAbsenceByid(){
     const id: string = this.activeRoute.snapshot.params.id;
     this.absenceService.getAbsenceById(id)

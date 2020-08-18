@@ -83,6 +83,16 @@
 
                     <form (ngSubmit)="onSubmit()" novalidate="" class="ng-untouched ng-pristine ng-valid">
                         <div class="col-md-5">
+                            <div class="form-group"><label>Employée</label>
+
+                                <select class="form-control " [(ngModel)]="absence.user " name="user ">
+                            <option *ngFor="let user of users " [ngValue]="user ">
+                                {{user.firstname}}
+                            </option>
+                        </select>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
                             <div class="form-group"><label> Type </label>
                                 <select class="form-control" id="type" formControlName="name" required [(ngModel)]="absence.type" name="type" [value]="absence.type">
                                             <option *ngFor="let type of typeAbsence">{{type}}</option>

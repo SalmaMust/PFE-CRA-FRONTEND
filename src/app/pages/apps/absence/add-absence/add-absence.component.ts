@@ -5,6 +5,8 @@ import { Absence } from 'src/app/core/models/absence.models';
 import { Router } from '@angular/router';
 import { FormBuilder } from "@angular/forms";
 import { DatePipe } from '@angular/common';
+import { UserService } from '../../utilisateur/user.service';
+import { User } from 'src/app/core/models/auth.models';
 @Component({
   selector: 'app-add-absence',
   templateUrl: './add-absence.component.html',
@@ -14,12 +16,13 @@ export class AddAbsenceComponent implements OnInit {
   typeAbsence: any = ['CP', 'Maladie']
   status: any = ['Pending','refused','accepted']
   absence: Absence = new Absence();
+  users : User[];
 
   submitted = false;
 
   
   
-  constructor(public fb: FormBuilder,private absenceService: AbsenceService,  private router: Router) {
+  constructor(public fb: FormBuilder,private userService: UserService,private absenceService: AbsenceService,  private router: Router) {
 
    }
    typeAbsenceForm = this.fb.group({
@@ -29,6 +32,8 @@ export class AddAbsenceComponent implements OnInit {
     name: ['']
   })
   ngOnInit(): void {
+    this.getAllUsers();
+
   }
 
   newUser(): void {
@@ -56,6 +61,20 @@ export class AddAbsenceComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/list-absence']);
   }
+  public getAllUsers = () => {
+    console.log('aaaaaa');
+    this.userService.getlistUser()
+    .subscribe(res => {
+   //this.isLoading = false;
 
+     this.users = res as User[];
+      console.log(res);
+
+    },
+    (error) => {
+      //this.errorService.handleError(error);
+      console.log(error);
+    })
+  }
 }
 

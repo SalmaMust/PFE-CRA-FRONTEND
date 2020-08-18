@@ -104,7 +104,9 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Employée</th>
                                     <th scope="col">Type</th>
+
                                     <th scope="col">Start Date</th>
                                     <th scope="col">End Date</th>
                                     <th scope="col">Status</th>
@@ -116,8 +118,9 @@
                             <tbody>
                                 <tr *ngFor="let absence of dataSource">
                                     <td>{{absence.id}}</td>
-                                    <td>{{absence.type}}</td>
+                                    <td>{{absence.user.firstname}}</td>
 
+                                    <td>{{absence.type}}</td>
                                     <td>{{absence.startDate| date:'yyyy-MM-dd'}}</td>
                                     <td>{{absence.endDate| date:'yyyy-MM-dd'}}</td>
                                     <td>{{absence.status}}</td>

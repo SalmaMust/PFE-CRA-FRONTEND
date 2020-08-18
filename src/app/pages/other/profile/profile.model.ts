@@ -1,3 +1,5 @@
+import { User } from 'src/app/core/models/auth.models';
+
 export interface Activity {
     time: string;
     title: string;
@@ -31,4 +33,5 @@ export interface List {
     bars: number;
     comment: number;
     progress: number;
+    user: User;
 }
