@@ -58,7 +58,11 @@ export class ProfileComponent implements OnInit {
       
           }) ;
   }
- 
+  userDetails ( id ){
+
+    //this.router.navigate(['espace-administration/details/'+id]);
+    this.router.navigate(['user-details/'+id]);
+  }
   public getAllAbsences = () => {
     console.log('aaaaaa');
     this.absenceService.getlistAbsence()

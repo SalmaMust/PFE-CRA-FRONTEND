@@ -36,7 +36,7 @@ public getlistAbsence() {
   
   if (this.currentUser.role === "User"){
     this.id = this.currentUser.id;
-      return this.http.get<Absence[]>(`http://localhost:8000/api/${this.id}/abslist`);  
+      return this.http.get<Absence[]>(`http://localhost:8000/api/${this.id}/userabsences`);  
  }
   else
  {

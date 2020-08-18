@@ -8,7 +8,7 @@
                         <div class="col">
                             <label class="font-weight-bold d-inline mr-2">
                                 <i class="icon-dual icon-xs mr-2" data-feather="hard-drive"></i>
-                                Project:
+                                Projet:
                             </label>
                             <div class="dropdown d-inline" ngbDropdown>
                                 <a class="font-weight-bold dropdown-toggle" href="javascript: void(0);" role="button" id="dropdownMenuLink" ngbDropdownToggle>
@@ -36,8 +36,7 @@
                             </div>
                         </div>
                         <div class="col text-right">
-                            <button class="btn btn-soft-primary" (click)="goToAdd()" id="btn-new-event"><i class="uil-plus mr-1"></i>Add
-                                New</button>
+                            <button class="btn btn-soft-primary" (click)="goToAdd()" id="btn-new-event"><i class="uil-plus mr-1"></i>Ajouter Tâche</button>
                         </div>
                     </div>
                 </div>
@@ -126,7 +125,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item" (click)="taskDetails(task.id)"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="taskDetails(task.id)"><i class="uil uil-edit-alt mr-2"></i>Modifier</a>
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-user-plus mr-2"></i>Add
                         People</a>
@@ -136,7 +135,7 @@
                     <div class="dropdown-divider"></div>
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item text-danger" (click)="deleteTask(task.id)"><i
-                            class="uil uil-trash mr-2"></i>Delete</a>
+                            class="uil uil-trash mr-2"></i>Supprimer</a>
                 </div>
             </div>
             <!-- end dropdown -->

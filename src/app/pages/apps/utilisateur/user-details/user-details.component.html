@@ -13,10 +13,10 @@
                     <form (ngSubmit)="onSubmit()" class="m-b-30 ng-untouched ng-pristine ng-valid" novalidate="">
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="form-group"><label class="control-label">First Name </label><input class="form-control ng-untouched ng-pristine ng-valid" name="firstname" required [(ngModel)]="user.firstname" type="text"></div>
+                                <div class="form-group"><label class="control-label">Prénom </label><input class="form-control ng-untouched ng-pristine ng-valid" name="firstname" required [(ngModel)]="user.firstname" type="text"></div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="form-group"><label class="control-label">Last Name</label><input class="form-control ng-untouched ng-pristine ng-valid" required [(ngModel)]="user.lastname" name="lastname" type="text"></div>
+                                <div class="form-group"><label class="control-label">Nom</label><input class="form-control ng-untouched ng-pristine ng-valid" required [(ngModel)]="user.lastname" name="lastname" type="text"></div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group"><label class="control-label">Username </label><input class="form-control ng-untouched ng-pristine ng-valid" name="username" required [(ngModel)]="user.username" type="text"></div>
@@ -28,14 +28,14 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="form-group"><label class="control-label">Password</label>
+                                <div class="form-group"><label class="control-label">Mot de passe</label>
                                     <input class="form-control ng-untouched ng-pristine ng-valid" id="password" name="password" required [(ngModel)]="user.password" type="password"></div>
                             </div>
                             <div class="col-sm-6"></div>
                             <div class="col-sm-6">
                                 <div class="form-group">
 
-                                    <label class="control-label">Birthday </label>
+                                    <label class="control-label">Date de naissance </label>
                                     <input type="date" class="form-control" id="birthday" required [(ngModel)]="user.birthday" [value]="user.birthday| date:'yyyy-MM-dd'" name="date">
                                     <!---->
                                     <div class="selectiongroup">
@@ -45,20 +45,20 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="form-group"><label class="control-label">Gendar</label>
+                                <div class="form-group"><label class="control-label">Sexe</label>
                                     <select class="select form-control ng-untouched ng-pristine ng-valid" required [(ngModel)]="user.gendar" name="gendar">
-                                        <option value="Admin">Male</option>
-                                        <option value="Manager">Female</option>
+                                        <option value="Admin">Homme</option>
+                                        <option value="Manager">Femme</option>
                                         
 
                                     </select></div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="form-group"><label class="control-label">Address </label><input class="form-control ng-untouched ng-pristine ng-valid" required [(ngModel)]="user.address" name="Address" required="" type="text"></div>
+                                <div class="form-group"><label class="control-label">Adresse </label><input class="form-control ng-untouched ng-pristine ng-valid" required [(ngModel)]="user.address" name="Address" required="" type="text"></div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group has-success">
-                                    <label class="control-label">Phone </label>
+                                    <label class="control-label">Tel </label>
                                     <input class="form-control unit-cost ng-untouched ng-pristine ng-valid" required [(ngModel)]="user.phone" name="phone" pattern="(\d{10}|\d{12})" required="" type="text">
                                     <!---->
                                 </div>
@@ -67,7 +67,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
 
-                                    <label class="control-label">Joining date</label>
+                                    <label class="control-label">Date d'Inscription</label>
                                     <input type="date" class="form-control" id="date" required [(ngModel)]="user.date" [value]="user.date| date:'yyyy-MM-dd'" name="date">
                                     <!---->
                                     <div class="selectiongroup">
@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="m-t-20 text-center">
-                            <!----><button class="btn btn-primary" type="submit">Save Changes</button></div>
+                            <!----><button class="btn btn-primary" type="submit">Enregistrer</button></div>
                     </form>
                     <div [hidden]="!submitted">
                         <h4>You submitted successfully!</h4>

@@ -8,8 +8,8 @@
 
         <div class="col-md-9 col-xl-6 text-md-right">
             <div class="mt-4 mt-md-0">
-                <button type="button" (click)="goToAdd()" class="btn btn-soft-primary mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Create
-            Client</button>
+                <button type="button" (click)="goToAdd()" class="btn btn-soft-primary mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Liste
+            Clients</button>
 
             </div>
         </div>
@@ -69,11 +69,11 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th scope="col">Firstname</th>
-                                <th scope="col">Lastname</th>
+                                <th scope="col">Prénom</th>
+                                <th scope="col">Nom</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">Address</th>
+                                <th scope="col">Tel</th>
+                                <th scope="col">Adresse</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
@@ -85,8 +85,8 @@
                                 <td>{{client.email}}</td>
                                 <td>{{client.phone}}</td>
                                 <td>{{client.address}}</td>
-                                <td><button (click)="deleteClient(client.id)" class="btn btn-soft-danger">Delete</button>
-                                    <button (click)="clientDetails(client.id)" class=" btn btn-soft-success" style="margin-left: 10px">Details</button>
+                                <td><button (click)="deleteClient(client.id)" class="btn btn-soft-danger">Supprimer</button>
+                                    <button (click)="clientDetails(client.id)" class=" btn btn-soft-success" style="margin-left: 10px">Modifier</button>
                                 </td>
                             </tr>
                         </tbody>

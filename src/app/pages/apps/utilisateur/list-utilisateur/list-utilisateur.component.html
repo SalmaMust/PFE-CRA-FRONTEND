@@ -1,12 +1,11 @@
 <div class="container-fluid">
     <div class="row page-title align-items-center">
         <div class="col-md-3 col-xl-6">
-            <h4 class="mb-1 mt-0">Utilisateurs</h4>
+            <h4 class="mb-1 mt-0">liste de utilisateurs</h4>
         </div>
         <div class="col-md-9 col-xl-6 text-md-right">
             <div class="mt-4 mt-md-0">
-                <button type="button" (click)="goToAdd()" class="btn btn-danger mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Create
-            User</button>
+                <button type="button" (click)="goToAdd()" class="btn btn-danger mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Ajouter </button>
 
             </div>
         </div>
@@ -23,15 +22,15 @@
                                     <th>#</th>
                                     <th>Email</th>
                                     <th>Username</th>
-                                    <th>firstName</th>
-                                    <th>Lastname</th>
-                                    <th>Birthday</th>
-                                    <th>Address</th>
-                                    <th>Gendar</th>
-                                    <th>Phone</th>
+                                    <th>Prénom</th>
+                                    <th>Nom</th>
+                                    <th>Date de naissance</th>
+                                    <th>Adresse</th>
+                                    <th>Sexe</th>
+                                    <th>Tel</th>
                                     <th>Role</th>
                                     <th>Poste</th>
-                                    <th>Joining Date</th>
+                                    <th>Date d'Inscription</th>
 
                                     <th>Actions</th>
                                 </tr>
@@ -50,8 +49,8 @@
                                     <td>{{user.role}}</td>
                                     <td>{{user.poste}}</td>
                                     <td>{{user.date| date:'yyyy-MM-dd'}}</td>
-                                    <td><button (click)="deleteUser(user.id)" class="btn btn-danger">Delete</button>
-                                        <button (click)="userDetails(user.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                                    <td><button (click)="deleteUser(user.id)" class="btn btn-danger">Supprimer</button>
+                                        <button (click)="userDetails(user.id)" class="btn btn-info" style="margin-left: 10px">Modifier</button>
                                     </td>
                                 </tr>
                             </tbody>

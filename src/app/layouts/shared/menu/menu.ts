@@ -31,7 +31,7 @@ export const MENU: MenuItem[] = [
         link: '/other/pages-profile'
     },
     {
-      label: 'Calendar',
+      label: 'Calendrier',
         icon: 'calendar',
         link: '/apps-calendar',
         role: 'admin',
@@ -127,7 +127,7 @@ export const MENU_EMPLOYEE: MenuItem[] = [
     link: '/other/pages-profile'
 },
   {
-    label: 'Calendar',
+    label: 'Calendrier',
       icon: 'calendar',
       link: '/apps-calendar',
       role: 'admin',
@@ -170,12 +170,22 @@ export const MENU_EMPLOYEE: MenuItem[] = [
        
     
 },
-{
-      label: 'Mes feuilles',
-      icon: 'briefcase',
-      link: '/apps/detail-timesheet',
-         
-  } ];
+
+  {
+    label: 'Mes feuilles',
+    icon: 'bookmark',
+    role:'admin',
+    subItems: [
+        {
+            label: 'List',
+            link: '/apps/list-timesheet',
+        }, {
+          label: 'Detail',
+          link: '/apps/detail-timesheet',
+      }
+       
+    ]
+}];
 
 
 export const MENU_MANAGER: MenuItem[] = [
@@ -190,7 +200,7 @@ export const MENU_MANAGER: MenuItem[] = [
     link: '/other/pages-profile'
 },
   {
-    label: 'Calendar',
+    label: 'Calendrier',
       icon: 'calendar',
       link: '/apps-calendar',
       role: 'admin',
@@ -257,7 +267,7 @@ export const MENU_RESPONSABLE: MenuItem[] = [
     link: '/other/pages-profile'
 },
   {
-    label: 'Calendar',
+    label: 'Calendrier',
       icon: 'calendar',
       link: '/apps-calendar',
       role: 'admin',

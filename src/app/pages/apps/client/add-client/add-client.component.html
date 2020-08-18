@@ -3,7 +3,7 @@
 
         <div class="col-md-3 col-xl-6">
 
-            <h4 class="mb-1 mt-0">Create Client</h4>
+            <h4 class="mb-1 mt-0">Ajouter Client</h4>
         </div>
     </div>
     <div class="row">
@@ -15,13 +15,13 @@
                             <form novalidate="" (ngSubmit)="onSubmit()" class="form-horizontal">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group"><label class="control-label">First Name <span  class="text-danger">*</span></label><input class="form-control " name="firstName" required [(ngModel)]="client.firstname" type="text"></div>
+                                        <div class="form-group"><label class="control-label">Prénom <span  class="text-danger">*</span></label><input class="form-control " name="firstName" required [(ngModel)]="client.firstname" type="text"></div>
                                     </div>
                                 </div>
                                 <div class="row">
 
                                     <div class="col-md-6">
-                                        <div class="form-group"><label class="control-label">Last Name<span  class="text-danger">*</span></label><input class="form-control " name="lastName" required [(ngModel)]="client.lastname" type="text"></div>
+                                        <div class="form-group"><label class="control-label">Nom<span  class="text-danger">*</span></label><input class="form-control " name="lastName" required [(ngModel)]="client.lastname" type="text"></div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -35,13 +35,13 @@
                                 <div class="row">
 
                                     <div class="col-md-6">
-                                        <div class="form-group"><label class="control-label">Address<span  class="text-danger">*</span></label><input required [(ngModel)]="client.address" class="form-control " name="address" required [(ngModel)]="client.firstname" type="text"></div>
+                                        <div class="form-group"><label class="control-label">Adresse<span  class="text-danger">*</span></label><input required [(ngModel)]="client.address" class="form-control " name="address" required [(ngModel)]="client.firstname" type="text"></div>
                                     </div>
                                 </div>
                                 <div class="row">
 
                                     <div class="col-md-6">
-                                        <div class="form-group"><label class="control-label">Phone <span  class="text-danger">*</span></label>
+                                        <div class="form-group"><label class="control-label">Tel <span  class="text-danger">*</span></label>
                                             <input class="form-control unit-cost " required [(ngModel)]="client.phone" name="mobile" pattern="(\d{10}|\d{12})" required [(ngModel)]="client.firstname" type="text">
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@
                                 <br> <br>
 
                                 <div class="m-t-20 text-center">
-                                    <button class="btn btn-primary" type="submit">Create Client</button></div>
+                                    <button class="btn btn-primary" type="submit">Créer Client</button></div>
                             </form>
                             <div [hidden]="!submitted">
                                 <h6>You submitted successfully!</h6>

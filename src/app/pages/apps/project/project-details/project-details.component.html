@@ -173,7 +173,7 @@
 
         <div class="col-md-3 col-xl-6">
 
-            <h4 class="mb-1 mt-0">Edit Project </h4>
+            <h4 class="mb-1 mt-0">Modifier Projet</h4>
         </div>
     </div>
     <div class="row">
@@ -184,7 +184,7 @@
                     <form novalidate="" (ngSubmit)="onSubmit()" class="form-horizontal">
                         <div class="row">
                             <div class="col-md-6">
-                                <label class="form-group" for="name">Project Name</label>
+                                <label class="form-group" for="name">Nom Projet</label>
 
                                 <input type="badge" class="form-control" id="projectName" required [(ngModel)]="project.projectName" name="projectName">
                             </div>
@@ -201,7 +201,7 @@
                         <br>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group"><label>Start Date</label>
+                                <div class="form-group"><label>Date Début</label>
                                     <input type="date" class="form-control" id="dateDebut" required [(ngModel)]="project.dateDebut" [value]="project.dateDebut| date:'yyyy-MM-dd'" name="dateDebut">
                                     <!---->
                                     <div class="selectiongroup">
@@ -211,7 +211,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group"><label>End Date</label>
+                                <div class="form-group"><label>Date Fin</label>
                                     <input type="date" class="form-control" id="dateFin" required [(ngModel)]="project.dateFin" [value]="project.dateFin | date:'yyyy-MM-dd'" name="dateFin">
                                     <!---->
                                     <div class="selectiongroup">
@@ -240,7 +240,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group"><label>Priority</label>
+                                <div class="form-group"><label>Priorité</label>
                                     <select class="form-control" [(ngModel)]="project.priorite " name="priorite">
                                         <option selected >High</option>
                                         <option  >Medium</option>
@@ -264,7 +264,7 @@
                             <textarea input type="badge" class="form-control" id="description" required [(ngModel)]="project.description" name="description" placeholder="Enter your message here" rows="4"></textarea>
                         </div>
                         <div class="m-t-20 badge-center">
-                            <button class="btn btn-primary" type="submit">Edit Project</button>
+                            <button class="btn btn-primary" type="submit">Enregistrer</button>
                         </div>
                     </form>
                     <div [hidden]="!submitted">
