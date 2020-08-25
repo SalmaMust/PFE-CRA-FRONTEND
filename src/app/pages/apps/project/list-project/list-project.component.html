@@ -2,11 +2,16 @@
     <div class="row page-title align-items-center">
         <div class="col-md-3 col-xl-6">
             <h2 class="mb-1 mt-0">liste Projets</h2>
+            <i class="x" (click)="goToHome()"> </i>
+
         </div>
         <div class="col-md-9 col-xl-6 text-md-right">
             <div class="mt-4 mt-md-0">
                 <button type="button" (click)="goToAdd()" class="btn btn-soft-primary mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Ajouter
             Projet</button>
+
+            </div>
+            <div class="float-right">
 
             </div>
         </div>
@@ -83,7 +88,7 @@
                         <div class="col-sm-auto">
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item pr-2">
-                                    <a href="javascript: void(0)" class="text-muted d-inline-block" placement="top" ngbTooltip=" Strat Date">
+                                    <a href="javascript: void(0)" class="text-muted d-inline-block" placement="top" ngbTooltip=" Start Date">
                                         <i class="uil uil-calender mr-1"></i> {{ project.dateDebut| date:'yyyy-MM-dd' }}
                                     </a>
                                 </li>

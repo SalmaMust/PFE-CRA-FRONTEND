@@ -17,7 +17,9 @@ import { UserService } from '../../utilisateur/user.service';
 })
 export class ListAbsenceComponent implements OnInit {
   typeAbsence: any = ['CP', 'Maladie']
-  status: any = ['Pending','refused','accepted']
+  status: any = ['En attente','Refuser','Accepter','Enregistrer'
+  
+  ]
   absence: Absence = new Absence();
   dataSource : Absence[];
   selectValue: string[];

@@ -14,7 +14,9 @@ import { User } from 'src/app/core/models/auth.models';
 })
 export class AddAbsenceComponent implements OnInit {
   typeAbsence: any = ['CP', 'Maladie']
-  status: any = ['Pending','refused','accepted']
+  status: any = ['En attente','Refuser','Accepter','Enregistrer'
+  
+  ]
   absence: Absence = new Absence();
   users : User[];
 

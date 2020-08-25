@@ -12,11 +12,12 @@ import { UserProfileService } from 'src/app/core/services/user.service';
 export class ListUtilisateurComponent implements OnInit {
 
   dataSource : User[];
-
+  
   constructor(private userService : UserService,  private router: Router) { }
 
   ngOnInit() {
     this.getAllUsers();
+
   }
 
   public getAllUsers = () => {

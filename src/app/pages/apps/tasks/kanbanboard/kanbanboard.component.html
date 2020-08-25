@@ -8,7 +8,7 @@
                         <div class="col">
                             <label class="font-weight-bold d-inline mr-2">
                                 <i class="icon-dual icon-xs mr-2" data-feather="hard-drive"></i>
-                                Projet:
+                                Projet :
                             </label>
                             <div class="dropdown d-inline" ngbDropdown>
                                 <a class="font-weight-bold dropdown-toggle" href="javascript: void(0);" role="button" id="dropdownMenuLink" ngbDropdownToggle>
@@ -142,21 +142,23 @@
             <h6 class="mt-0 mb-2 font-size-15">
                 <a href="javascript: void(0);" class="text-body">{{ task.taskName }}</a>
             </h6>
+            <span class="badge" [ngClass]="{
+                'badge-soft-success': task.priorite === 'Low',
+                'badge-soft-warning': task.priorite === 'Medium',
+                'badge-soft-danger': task.priorite === 'High',
+                'badge-soft-info': task.priorite === 'Normal'
+            }">{{ task.priorite }}</span>
 
+            <br>
+            <br>
             <span class="text-nowrap align-middle font-size-13 mr-2">
                 <i class="uil uil-comments-alt text-muted mr-1"></i>{{ task.description }}
             </span>
-
             <p class="mb-0 mt-4">
-                <!-- <img src="{{ task.user }} " alt="user-img" class="avatar-xs rounded-circle mr-2" /> -->
+                <img src="assets/images/users/avatar.jpg" class="avatar-xs rounded-circle mr-2" /> {{task.user.firstname}}
 
 
-                <span class="badge" [ngClass]="{
-                    'badge-soft-success': task.priorite === 'Low',
-                    'badge-soft-warning': task.priorite === 'Medium',
-                    'badge-soft-danger': task.priorite === 'High',
-                    'badge-soft-info': task.priorite === 'Normal'
-                }">{{ task.priorite }}</span>
+
 
                 <!--  <span class="text-nowrap align-middle font-size-13">
                     <i class="uil uil-check-square mr-1 text-muted"></i>{{ task.donetask }}

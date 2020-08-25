@@ -16,7 +16,9 @@ import { UserService } from '../../utilisateur/user.service';
 
 export class AbsenceDetailsComponent implements OnInit {
   typeAbsence: any = ['CP', 'Maladie']
-  status: any = ['Pending','refused','accepted']
+  status: any = ['En attente','Refuser','Accepter','Enregistrer'
+  
+  ]
   users : User[];
 
   absence: Absence ;

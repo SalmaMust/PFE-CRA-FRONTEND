@@ -7,6 +7,9 @@ import { DndDropEvent } from 'ngx-drag-drop';
 import { TaskService } from '../task.service';
 import { Task } from 'src/app/core/models/task.models';
 import { Router } from '@angular/router';
+import { ProjectService } from '../../project/project.service';
+import { Project } from 'src/app/core/models/project.models';
+import { User } from 'src/app/core/models/auth.models';
 
 @Component({
   selector: 'app-kanbanboard',
@@ -24,7 +27,8 @@ export class KanbanboardComponent implements OnInit {
 
   // Task data
   task: Task = new Task();
-
+  projects : Project[];
+  user : User[];
   dataSource : Task[];
   tasks: Task[];
   todoTasks: Task[];
@@ -36,11 +40,12 @@ export class KanbanboardComponent implements OnInit {
   reviewSize: any ;
   doneSize: any ;
 
-  constructor(private taskService : TaskService,  private router: Router) { }
+  constructor(private projectService : ProjectService,private taskService : TaskService,  private router: Router) { }
 
   ngOnInit() {
     // tslint:disable-next-line: max-line-length
     this.breadCrumbItems = [{ label: 'Shreyu', path: '/' }, { label: 'Apps', path: '/' }, { label: 'Tasks', path: '/' }, { label: 'Tasks Board', active: true }];
+    this.getAllProjects();
     this.getAllTasks();
         /**
      * Fetches Data
@@ -65,7 +70,21 @@ export class KanbanboardComponent implements OnInit {
       filteredList.splice(index, 0, event.data);
     }
   }
+  public getAllProjects = () => {
+    console.log('aaaaaa');
+    this.projectService.getlistProject()
+    .subscribe(res => {
+   //this.isLoading = false;
 
+     this.projects = res as Project[];
+      console.log(res);
+
+    },
+    (error) => {
+      //this.errorService.handleError(error);
+      console.log(error);
+    })
+  }
   save(task: Task){
     console.log(task);
     

@@ -28,7 +28,7 @@ export const MENU: MenuItem[] = [
     {
         label: 'Profil',
         icon: 'file-text',
-        link: '/other/pages-profile'
+        link: '/pages-profile'
     },
     {
       label: 'Calendrier',

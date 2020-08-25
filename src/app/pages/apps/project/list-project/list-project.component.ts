@@ -13,7 +13,7 @@ import { ProjectProfilService } from 'src/app/core/services/project.service';
 export class ListProjectComponent implements OnInit {
 
   dataSource : Project[];
-
+  show = false;
   constructor(private projectService : ProjectService,  private router: Router) { }
 
   ngOnInit() {
@@ -39,7 +39,9 @@ export class ListProjectComponent implements OnInit {
   goToAdd() {
     this.router.navigate(['add-project']);
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   public deleteProject  = (id) => {
     this.projectService.delete(id)
     .subscribe(res => {

@@ -58,10 +58,10 @@ export class ProfileComponent implements OnInit {
       
           }) ;
   }
-  userDetails ( id ){
+  profileDetails ( id ){
 
     //this.router.navigate(['espace-administration/details/'+id]);
-    this.router.navigate(['user-details/'+id]);
+    this.router.navigate(['profile-details/'+id]);
   }
   public getAllAbsences = () => {
     console.log('aaaaaa');
