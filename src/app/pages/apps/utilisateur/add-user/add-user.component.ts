@@ -22,7 +22,9 @@ export class AddUserComponent implements OnInit {
     this.submitted = false;
     this.user = new User();
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   save(){
     console.log(this.user);
     

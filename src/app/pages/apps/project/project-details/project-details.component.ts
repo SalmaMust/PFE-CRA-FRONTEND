@@ -54,7 +54,9 @@ export class ProjectDetailsComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/project-list']);
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   onSubmit() {
     this.submitted = true;
     this.save();    

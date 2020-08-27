@@ -36,7 +36,9 @@ users: User[];
     this.getAllAbsences();
     this.getAllUsers();
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   public getAllAbsences = () => {
     console.log('aaaaaa');
     this.absenceService.getlistAbsence()

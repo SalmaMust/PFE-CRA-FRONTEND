@@ -28,7 +28,9 @@ export class TaskDetailsComponent implements OnInit {
     this.getAllUsers();
 
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   getTaskByid(){
     const id: string = this.activeRoute.snapshot.params.id;
     this.taskService.getTaskById(id)

@@ -24,7 +24,9 @@ export class AddClientComponent implements OnInit {
     this.submitted = false;
     this.client = new Client();
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   save(){
     console.log(this.client);
     

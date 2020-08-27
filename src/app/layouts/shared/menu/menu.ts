@@ -37,7 +37,7 @@ export const MENU: MenuItem[] = [
         role: 'admin',
     },
     {
-        label: 'User',
+        label: 'Utilisateurs',
         icon: 'briefcase',
         role:'admin',
         subItems: [
@@ -49,7 +49,7 @@ export const MENU: MenuItem[] = [
     },
     {
         
-            label: 'Client',
+            label: 'Clients',
             icon: 'bookmark',
             role:'admin',
             subItems: [
@@ -61,7 +61,7 @@ export const MENU: MenuItem[] = [
             ]
     },
     {
-        label: 'Project',
+        label: 'Projets',
         icon: 'briefcase',
         role:'admin',
         subItems: [
@@ -73,7 +73,7 @@ export const MENU: MenuItem[] = [
         ]
     },
     {
-        label: 'Tasks',
+        label: 'Tâches',
         icon: 'bookmark',
         role:'admin',
         subItems: [
@@ -100,7 +100,7 @@ export const MENU: MenuItem[] = [
       ]
   },
   {
-        label: 'Timesheet',
+        label: 'Feuille du temps',
         icon: 'briefcase',
         role:'admin',
         subItems: [

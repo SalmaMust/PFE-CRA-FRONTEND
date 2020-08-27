@@ -29,7 +29,9 @@ export class AddProjectComponent implements OnInit {
     this.submitted = false;
     this.project = new Project();
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   save(){
     console.log(this.project);
     

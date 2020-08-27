@@ -58,6 +58,9 @@ export class AbsenceDetailsComponent implements OnInit {
       console.log(error);
     })
   }
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   getAbsenceByid(){
     const id: string = this.activeRoute.snapshot.params.id;
     this.absenceService.getAbsenceById(id)

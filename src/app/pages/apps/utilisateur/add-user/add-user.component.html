@@ -76,6 +76,8 @@
             <div class="card">
                 <div class="card-body">
                     <form (ngSubmit)="onSubmit()" class="m-b-30 ng-untouched ng-pristine ng-valid" novalidate="">
+                        <button type="button" class="btn btn-rounded btn-danger float-right" (click)="goToHome()"><i class="x"></i> X
+                        </button>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group"><label class="control-label">Prénom <span class="text-danger">*</span></label><input class="form-control ng-untouched ng-pristine ng-valid" name="firstName" required [(ngModel)]="user.firstname" type="text"></div>
@@ -112,8 +114,8 @@
                             <div class="col-sm-6">
                                 <div class="form-group"><label class="control-label">Sexe<span class="text-danger m-l-5">*</span></label>
                                     <select class="select form-control ng-untouched ng-pristine ng-valid" required [(ngModel)]="user.gendar" name="gendar">
-                                        <option value="Admin">Homme</option>
-                                        <option value="Manager">Femme</option>
+                                        <option value="Homme">Homme</option>
+                                        <option value="Femme">Femme</option>
                                         
 
                                     </select></div>

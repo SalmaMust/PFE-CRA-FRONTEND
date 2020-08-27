@@ -22,7 +22,9 @@ export class ClientDetailsComponent implements OnInit {
     this.getClientByid();
     
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   getClientByid(){
     const id: string = this.activeRoute.snapshot.params.id;
     this.clientService.getClientById(id)

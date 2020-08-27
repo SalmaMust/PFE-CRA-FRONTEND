@@ -37,7 +37,9 @@ export class AddAbsenceComponent implements OnInit {
     this.getAllUsers();
 
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   newUser(): void {
     this.submitted = false;
     this.absence = new Absence();

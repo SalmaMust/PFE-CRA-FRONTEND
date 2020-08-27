@@ -21,7 +21,9 @@ export class UserDetailsComponent implements OnInit {
     this.getUserByid();
     
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   getUserByid(){
     const id: string = this.activeRoute.snapshot.params.id;
     this.userService.getUserById(id)

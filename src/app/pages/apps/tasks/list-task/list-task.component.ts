@@ -19,7 +19,9 @@ export class ListTaskComponent implements OnInit {
   ngOnInit() {
     this.getAllTasks();
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   public getAllTasks = () => {
     console.log('aaaaaa');
     this.taskService.getlistTask()

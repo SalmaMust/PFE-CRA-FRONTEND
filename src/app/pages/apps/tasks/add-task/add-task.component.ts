@@ -31,7 +31,9 @@ export class AddTaskComponent implements OnInit {
     this.submitted = false;
     this.task = new Task();
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   save(){
     console.log(this.task);
     

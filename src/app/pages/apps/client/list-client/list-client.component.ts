@@ -18,7 +18,9 @@ export class ListClientComponent implements OnInit {
   ngOnInit() {
     this.getAllClients();
   }
-
+  goToHome() {
+    this.router.navigate(['/']);
+  }
   public getAllClients = () => {
     console.log('aaaaaa');
     this.clientService.getlistClient()
