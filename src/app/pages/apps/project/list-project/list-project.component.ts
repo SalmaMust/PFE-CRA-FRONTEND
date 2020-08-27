@@ -4,6 +4,7 @@ import { Project } from 'src/app/core/models/project.models';
 import { ProjectService } from '../project.service';
 import { Router } from '@angular/router';
 import { ProjectProfilService } from 'src/app/core/services/project.service';
+import { User } from 'src/app/core/models/auth.models';
 
 @Component({
   selector: 'app-list-project',
@@ -14,9 +15,11 @@ export class ListProjectComponent implements OnInit {
 
   dataSource : Project[];
   show = false;
+  currentUser: User; 
   constructor(private projectService : ProjectService,  private router: Router) { }
 
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.getAllProjects();
   }
 
