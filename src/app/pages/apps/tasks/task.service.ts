@@ -43,6 +43,10 @@ public getlistTask() {
   
 }
 
+public gettasksByUserId(id: String){
+  return this.http.get<Task[]>(`http://localhost:8000/api/${id}/usertasks`);  
+}
+
 public getTaskById(id: String){
   return this.http.get<Task>(`http://localhost:8000/api/tasks/${id}`);
 }

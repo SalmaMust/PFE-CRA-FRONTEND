@@ -40,6 +40,14 @@ public getlistUser() {
   return this.http.get<User[]>(`http://localhost:8000/api/users`);
 }
 
+public getlistManagers() {
+
+  console.log("api get managers");
+  
+
+  return this.http.get<User[]>(`http://localhost:8000/api/managers`);
+}
+
 public getUserById(id: String){
   return this.http.get<User>(`http://localhost:8000/api/users/${id}`);
 }

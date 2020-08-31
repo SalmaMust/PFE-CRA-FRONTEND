@@ -1,4 +1,5 @@
 import { Client } from './client.models';
+import { User } from './auth.models';
 
 export class Project {
     id?:string;
@@ -10,6 +11,7 @@ export class Project {
     client: Client;
     type: string;
     priorite: string;
+    responsable: User;
 
 }
 

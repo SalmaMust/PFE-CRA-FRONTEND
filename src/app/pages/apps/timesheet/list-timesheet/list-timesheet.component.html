@@ -1,1 +1,55 @@
-<p>list-timesheet works!</p>
+<div class="container-fluid">
+    <div class="row page-title align-items-center">
+        <div class="col-md-3 col-xl-6">
+            <h4 class="mb-1 mt-0">Feilles du temps</h4>
+        </div>
+        <div class="col-md-9 col-xl-6 text-md-right">
+            <div class="mt-4 mt-md-0">
+                <button type="button" (click)="goToAdd()" class="btn btn-danger mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Ajouter </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="table table-striped mb-0">
+                        <table class="table m-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Mois</th>
+                                    <th>Annee</th>
+                                    <th>Total interne</th>
+                                    <th>Total production</th>
+                                    <th>Date de creation</th>
+                                    <th>Statut</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let timesheet of dataSource">
+                                    <td>{{timesheet.id}}</td>
+                                    <td>{{timesheet.month}}</td>
+                                    <td>{{timesheet.year}}</td>
+                                    <td>{{timesheet.totalIntern}}</td>
+                                    <td>{{timesheet.totalProduction}}</td>
+                                    <td>{{timesheet.creationDate| date:'yyyy-MM-dd'}}</td>
+                                    <td>{{timesheet.status}}</td>
+                                    <td><button (click)="deleteUser(timesheet.id)" class="btn btn-danger">Supprimer</button>
+                                        <button (click)="timesheetDetails(timesheet.id)" class="btn btn-info" style="margin-left: 10px">Modifier</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

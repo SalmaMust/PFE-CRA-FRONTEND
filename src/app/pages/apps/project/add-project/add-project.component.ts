@@ -4,6 +4,8 @@ import { Project } from 'src/app/core/models/project.models';
 import { Router } from '@angular/router';
 import { ClientService } from '../../client/client.service';
 import { Client } from 'src/app/core/models/client.models';
+import { UserService } from '../../utilisateur/user.service';
+import { User } from 'src/app/core/models/auth.models';
 
 @Component({
   selector: 'app-add-project',
@@ -14,14 +16,16 @@ export class AddProjectComponent implements OnInit {
 
   project: Project = new Project();
    clients : Client[];
+   managers : User[];
 
   submitted = false;
 
-  constructor(private projectService: ProjectService, private clientService: ClientService, private router: Router) { }
+  constructor(private userService: UserService, private projectService: ProjectService, private clientService: ClientService, private router: Router) { }
 
   ngOnInit(): void {
     //this.clients=this.clientService.getlistClient()
     this.getAllClients();
+    this.getAllManagers();
     console.log(this.clients);
   }
 
@@ -57,6 +61,22 @@ export class AddProjectComponent implements OnInit {
    //this.isLoading = false;
 
      this.clients = res as Client[];
+      console.log(res);
+
+    },
+    (error) => {
+      //this.errorService.handleError(error);
+      console.log(error);
+    })
+  }
+
+  public getAllManagers = () => {
+    console.log('managers');
+    this.userService.getlistManagers()
+    .subscribe(res => {
+   //this.isLoading = false;
+
+     this.managers = res as User[];
       console.log(res);
 
     },

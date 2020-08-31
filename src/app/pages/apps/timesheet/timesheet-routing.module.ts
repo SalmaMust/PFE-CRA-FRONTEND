@@ -12,7 +12,7 @@ const routes: Routes = [
     },
     
     {
-        path: 'detail-timesheet',
+        path: 'detail-timesheet/:id',
         component: DetailTimesheetComponent
     }
 ];

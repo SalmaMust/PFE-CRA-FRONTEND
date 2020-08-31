@@ -6,7 +6,7 @@
 
         </div>
         <div class="col-md-9 col-xl-6 text-md-right">
-            <div class="mt-4 mt-md-0" *ngIf="currentUser.role == 'Admin' || currentUser.role == 'Responsable' ">
+            <div class="mt-4 mt-md-0" *ngIf="currentUser.role == 'Admin' || currentUser.role == 'Admin' ">
                 <button type="button" (click)="goToAdd()" class="btn btn-soft-primary mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Ajouter
             Projet</button>
                 <button type="button" class="btn btn-rounded btn-danger float-right" (click)="goToHome()"><i class="x"></i> X
@@ -82,7 +82,6 @@
                         Nom Client : {{project.client.firstname}}
 
                     </div>
-
                 </div>
                 <div class="card-body border-top">
                     <div class="row align-items-center">
