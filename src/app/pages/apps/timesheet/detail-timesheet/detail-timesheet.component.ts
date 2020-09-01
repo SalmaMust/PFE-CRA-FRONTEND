@@ -140,6 +140,7 @@ export class DetailTimesheetComponent implements OnInit {
       this.submitted = false;
       this.timesheet = new Timesheet();
     }
+
     addRow(index) {  
         let days: DayItem[] = [];
         for( let i=1;i<=this.daysOfMonth;i++)

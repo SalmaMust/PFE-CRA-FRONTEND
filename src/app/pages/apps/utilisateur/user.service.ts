@@ -53,7 +53,7 @@ public getUserById(id: String){
   return this.http.get<User>(`http://localhost:8000/api/users/${id}`);
 }
 
-/*public getUserByManager(id: String){
+public getUserByManager(id: String){
   return this.http.get<User[]>(`http://localhost:8000/api/users/${id}/employes`);
-}*/
+}
 }

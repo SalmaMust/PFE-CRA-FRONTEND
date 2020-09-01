@@ -23,10 +23,8 @@ export class ListUtilisateurComponent implements OnInit {
   }
 
   public getAllUsers = () => {
-    const id: string = this.activeRoute.snapshot.params.id;
-
     console.log('aaaaaa');
-    this.userService.getlistUser()
+    this.userService.getUserByManager(this.currentUser.id)
     .subscribe(res => {
    //this.isLoading = false;
 

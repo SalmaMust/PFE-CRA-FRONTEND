@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Project } from 'src/app/core/models/project.models';
+import { User } from 'src/app/core/models/auth.models';
 
 
 
@@ -14,9 +15,13 @@ import { Project } from 'src/app/core/models/project.models';
 })
 export class ProjectService {
 project: Project;
+currentUser: User;
+id: String;
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+   }
 
 
 
@@ -30,9 +35,13 @@ public createProject (project) {
 public getlistProject() {
 
   console.log("api get all");
-  
-
-  return this.http.get<Project[]>(`http://localhost:8000/api/projects`);
+  if (this.currentUser.role == "Manager"){
+    this.id = this.currentUser.id;
+    return this.http.get<Project[]>(`http://localhost:8000/api/managerprojects/${this.id}`);
+  } else {
+    return this.http.get<Project[]>(`http://localhost:8000/api/projects`);
+  }
+    
 }
 
 public getProjectById(id: String){
