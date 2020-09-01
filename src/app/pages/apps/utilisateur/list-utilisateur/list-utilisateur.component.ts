@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/core/models/auth.models';
 import { UserService } from '../user.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UserProfileService } from 'src/app/core/services/user.service';
 
 @Component({
@@ -12,15 +12,19 @@ import { UserProfileService } from 'src/app/core/services/user.service';
 export class ListUtilisateurComponent implements OnInit {
 
   dataSource : User[];
-  
-  constructor(private userService : UserService,  private router: Router) { }
+  currentUser: User; 
+
+  constructor(private userService : UserService,private activeRoute: ActivatedRoute,  private router: Router) { }
 
   ngOnInit() {
-    this.getAllUsers();
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
+    this.getAllUsers();
   }
 
   public getAllUsers = () => {
+    const id: string = this.activeRoute.snapshot.params.id;
+
     console.log('aaaaaa');
     this.userService.getlistUser()
     .subscribe(res => {
@@ -67,4 +71,9 @@ export class ListUtilisateurComponent implements OnInit {
     //this.router.navigate(['espace-administration/details/'+id]);
     this.router.navigate(['user-details/'+id]);
   }
+  employeeDetails ( id ){
+
+    this.router.navigate(['app-employee/'+id]);
+  }
+  
 }

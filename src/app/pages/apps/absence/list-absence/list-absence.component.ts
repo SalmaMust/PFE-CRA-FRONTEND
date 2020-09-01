@@ -17,15 +17,20 @@ import { UserService } from '../../utilisateur/user.service';
 })
 export class ListAbsenceComponent implements OnInit {
   typeAbsence: any = ['CP', 'Maladie']
-  status: any = ['En attente','Refuser','Accepter','Enregistrer'
+  status: any = ['En attente','Refuser','Accepter','Enregistré'
   
   ]
   absence: Absence = new Absence();
   dataSource : Absence[];
   selectValue: string[];
   submitted = false;
+    currentUser: User; 
+
 users: User[];
-  constructor(public fb: FormBuilder,private userService: UserService,private absenceService : AbsenceService,  private router: Router) { }
+  constructor(public fb: FormBuilder,private userService: UserService,private absenceService : AbsenceService,  private router: Router) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+   }
   typeAbsenceForm = this.fb.group({
     name: ['']
   })
@@ -108,7 +113,8 @@ users: User[];
 
   save(){
     console.log(this.absence);
-    
+    this.absence.status= "Enregistré";
+    this.dataSource.push(this.absence);
     this.absenceService.createAbsence(this.absence)
       .subscribe(data =>  console.log(data), error => console.log(error));
       this.absence = new Absence();

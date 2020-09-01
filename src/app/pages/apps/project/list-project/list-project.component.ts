@@ -16,6 +16,7 @@ export class ListProjectComponent implements OnInit {
   dataSource : Project[];
   show = false;
   currentUser: User; 
+manager: User;
   constructor(private projectService : ProjectService,  private router: Router) { }
 
   ngOnInit() {

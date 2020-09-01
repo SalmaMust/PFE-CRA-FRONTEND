@@ -107,8 +107,7 @@
                 <div class="card-body">
 
                     <form novalidate="" (ngSubmit)="onSubmit()" class="form-horizontal">
-                        <button type="button" class="btn btn-rounded btn-danger float-right" (click)="goToHome()"><i class="x"></i> X
-                        </button>
+
                         <div class="row">
                             <div class="col-md-5">
                                 <label class="form-group" for="name">Nom Tâche</label>
@@ -135,20 +134,20 @@
                             <div class="col-md-5">
                                 <div class="form-group" for="name "><label>Status<span  class="text-danger">*</span></label>
                                     <select class="form-control " [(ngModel)]="task.status " name="status ">
-                                        <option selected> à faire </option>
-                                        <option>en attente</option> 
+                                        <option selected> todo </option>
+                                        <option>pending</option> 
                                         <option>review</option>
-                                        <option>terminé</option> 
+                                        <option>done</option> 
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-5">
                                 <div class="form-group" for="name "><label>Priorité<span  class="text-danger">*</span></label>
                                     <select class="form-control" [(ngModel)]="task.priorite " name="priorite">
-                                        <option selected> faible </option>
+                                        <option selected> Low </option>
                                         <option>Normal</option> 
-                                        <option>Moyen</option> 
-                                        <option>Haute</option></select></div>
+                                        <option>Medium</option> 
+                                        <option>High</option></select></div>
 
 
                             </div>

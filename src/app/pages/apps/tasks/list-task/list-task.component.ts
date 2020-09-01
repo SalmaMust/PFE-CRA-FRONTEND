@@ -4,6 +4,7 @@ import { TaskService } from '../task.service';
 import { Router } from '@angular/router';
 import { TaskProfileService } from 'src/app/core/services/task.service';
 import { DndDropEvent } from 'ngx-drag-drop';
+import { User } from 'src/app/core/models/auth.models';
 @Component({
   selector: 'app-list-task',
   templateUrl: './list-task.component.html',
@@ -11,12 +12,15 @@ import { DndDropEvent } from 'ngx-drag-drop';
 })
 export class ListTaskComponent implements OnInit {
   task: Task = new Task();
+  currentUser: User; 
 
   dataSource : Task[];
 
   constructor(private taskService : TaskService,  private router: Router) { }
 
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
     this.getAllTasks();
   }
   goToHome() {

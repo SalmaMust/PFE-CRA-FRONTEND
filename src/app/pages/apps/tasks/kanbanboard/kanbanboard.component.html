@@ -5,36 +5,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row align-items-center">
-                        <div class="col">
-                            <label class="font-weight-bold d-inline mr-2">
-                                <i class="icon-dual icon-xs mr-2" data-feather="hard-drive"></i>
-                                Projet :
-                            </label>
-                            <div class="dropdown d-inline" ngbDropdown>
-                                <a class="font-weight-bold dropdown-toggle" href="javascript: void(0);" role="button" id="dropdownMenuLink" ngbDropdownToggle>
-                                    Shreyu Design
-                                    <i class='uil uil-angle-down font-size-16 align-middle'></i>
-                                </a>
 
-                                <div class="dropdown-menu" ngbDropdownMenu>
-                                    <a class="dropdown-item" href="javascript: void(0);">
-                                        <i class="icon-dual icon-xs mr-2" data-feather="hard-drive"></i>Shreyu Design
-                                    </a>
-                                    <a class="dropdown-item" href="javascript: void(0);">
-                                        <i class="icon-dual icon-xs mr-2" data-feather="briefcase"></i> Development
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript: void(0);">
-                                        <i class="icon-dual icon-xs mr-2" data-feather="folder-plus">
-                                        </i>Shreyu Angular
-                                    </a>
-                                    <a class="dropdown-item" href="javascript: void(0);">
-                                        <i class="icon-dual icon-xs mr-2" data-feather="folder-plus">
-                                        </i>Shreyu React
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col text-right">
                             <button class="btn btn-soft-primary" (click)="goToAdd()" id="btn-new-event"><i class="uil-plus mr-1"></i>Ajouter Tâche</button>
                         </div>
@@ -127,12 +98,8 @@
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item" (click)="taskDetails(task.id)"><i class="uil uil-edit-alt mr-2"></i>Modifier</a>
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-user-plus mr-2"></i>Add
-                        People</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item text-warning"><i
-                            class="uil uil-exit mr-2" ></i>Leave</a>
-                    <div class="dropdown-divider"></div>
+
+
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item text-danger" (click)="deleteTask(task.id)"><i
                             class="uil uil-trash mr-2"></i>Supprimer</a>

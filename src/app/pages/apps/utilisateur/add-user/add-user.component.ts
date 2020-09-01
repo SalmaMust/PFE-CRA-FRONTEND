@@ -12,10 +12,12 @@ export class AddUserComponent implements OnInit {
 
   user: User = new User();
   submitted = false;
+  managers : User[];
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getAllManagers();
   }
 
   newUser(): void {
@@ -42,6 +44,20 @@ export class AddUserComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/utilisateur-list']);
   }
+  public getAllManagers = () => {
+    console.log('managers');
+    this.userService.getlistManagers()
+    .subscribe(res => {
+   //this.isLoading = false;
 
+     this.managers = res as User[];
+      console.log(res);
+
+    },
+    (error) => {
+      //this.errorService.handleError(error);
+      console.log(error);
+    })
+  }
 }
 

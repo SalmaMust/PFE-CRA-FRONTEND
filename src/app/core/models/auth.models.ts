@@ -14,5 +14,5 @@ export class User {
  birthday: Date;
  gendar:string;
  about:string;
-
+manager:User;
 }

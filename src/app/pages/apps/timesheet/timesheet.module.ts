@@ -7,6 +7,7 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListTimesheetComponent } from './list-timesheet/list-timesheet.component';
 import { DetailTimesheetComponent } from './detail-timesheet/detail-timesheet.component';
+import { AddTimesheetComponent } from './add-timesheet/add-timesheet.component';
 
 
 
@@ -21,7 +22,7 @@ import { DetailTimesheetComponent } from './detail-timesheet/detail-timesheet.co
         FormsModule, 
         ReactiveFormsModule
     ],
-    declarations: [ListTimesheetComponent, DetailTimesheetComponent],
+    declarations: [ListTimesheetComponent, DetailTimesheetComponent, AddTimesheetComponent],
 })
 
 export class TimesheetModule { }

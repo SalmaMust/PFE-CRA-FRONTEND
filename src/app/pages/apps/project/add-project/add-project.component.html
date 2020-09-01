@@ -107,8 +107,7 @@
 
                     <form novalidate="" (ngSubmit)="onSubmit()" class="form-horizontal">
 
-                        <button type="button" class="btn btn-rounded btn-danger float-right" (click)="goToHome()"><i class="x"></i> X
-                        </button>
+
                         <div class="row">
 
                             <div class="col-md-6">
@@ -164,7 +163,7 @@
                             <div class="col-md-3">
                                 <div class="form-group" for="name "><label>Status<span  class="text-danger">*</span></label>
                                     <select class="select form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="project.status " name="status ">
-                                        <option selected> terminé </option>
+                                        <option selected> Terminé </option>
                                         <option>En cours</option> 
                                         <option>En attente</option> 
                                     </select>
@@ -182,18 +181,18 @@
                             <div class="col-md-6">
                                 <!-- <div class="form-group"><label>Responsable</label><input class="form-control ng-untouched ng-pristine ng-valid" name="leader" type="text"></div>
                                  -->
-                                 <div class="form-group"><label>Responsable<span  class="text-danger">*</span></label>
+                                <div class="form-group"><label>Manager<span  class="text-danger">*</span></label>
 
-                                    <select class="form-control " [(ngModel)]="project.responsable " name="user ">
+                                    <select class="form-control " [(ngModel)]="project.manager " name="user ">
                                 <option *ngFor="let manager of managers" [ngValue]="manager ">
-                                    {{manager.firstname}}
+                                    {{manager.firstname}} {{manager.lastname}}
                                 </option>
                             </select>
-                            </div>
+                                </div>
                             </div>
 
                         </div>
-                   <!--      <div class="row">
+                        <!--      <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group"><label>Manager</label><input class="form-control" type="text"></div>
                             </div>

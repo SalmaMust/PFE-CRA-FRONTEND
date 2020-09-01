@@ -16,4 +16,5 @@ export class Timesheet {
     productionList: Production[];
     interneList: Internal[];
     user : User;
+    totalIntern:Number;
 }

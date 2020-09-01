@@ -1,16 +1,14 @@
 <div class="container-fluid">
     <div class="row page-title align-items-center">
         <div class="col-md-3 col-xl-6">
-            <h2 class="mb-1 mt-0">liste Projets</h2>
-            <i class="x" (click)="goToHome()"> </i>
+            <h2 class="mb-1 mt-0">liste des Projets</h2>
 
         </div>
         <div class="col-md-9 col-xl-6 text-md-right">
-            <div class="mt-4 mt-md-0" *ngIf="currentUser.role == 'Admin' || currentUser.role == 'Admin' ">
+            <div class="mt-4 mt-md-0" *ngIf="currentUser.role == 'Admin' || currentUser.role == 'Responsable' ">
                 <button type="button" (click)="goToAdd()" class="btn btn-soft-primary mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Ajouter
             Projet</button>
-                <button type="button" class="btn btn-rounded btn-danger float-right" (click)="goToHome()"><i class="x"></i> X
-            </button>
+
             </div>
             <div class="float-right">
 
@@ -62,17 +60,18 @@
                 <div class="card-body">
 
                     <h5>
-                        <div class="badge  badge-success float-right " [ngClass]="{
-                    'badge-soft-success': project.status === 'Completed',
-                    'badge-soft-info': project.status ==='In Progress',
-                    'badge-soft-warning': project.status === 'Pending'}">
+                        <div class="badge   float-right " [ngClass]="{
+                            'badge-soft-warning': project.status === 'En attente',
+                            'badge-soft-success': project.status === 'Terminé',
+                             'badge-soft-info': project.status ==='En cours'
+                    }">
                             {{ project.status }}</div>
                     </h5>
 
                     <p class=" text-uppercase font-size-15 mb-2" [ngClass]="{
-                        'text-success': project.status === 'Completed',
-                        'text-info': project.status ==='In Progress',
-                        'text-warning': project.status === 'Pending'}">{{ project.type }}</p>
+                        'text-success': project.status === 'Terminé',
+                        'text-info': project.status ==='En cours',
+                        'text-warning': project.status === 'En attente'}">{{ project.type }}</p>
 
 
                     <h3 cl><a href="javascript: void(0)" class="text-dark">{{ project.projectName }}</a></h3>
@@ -82,6 +81,10 @@
                         Nom Client : {{project.client.firstname}}
 
                     </div>
+                    <!-- <div>
+
+                        Manager : {{project.manager}} {{project.manager}}
+                    </div> -->
                 </div>
                 <div class="card-body border-top">
                     <div class="row align-items-center">
@@ -102,10 +105,10 @@
                                     <i class="uil uil-edit-alt mr-2 float-lg-right " (click)="projectDetails(project.id)"></i>
                                 </div>
 
-                                <div class="badge" [ngClass]="{
-                                    'badge-soft-success': project.status === 'High',
-                                    'badge-soft-info': project.status ==='Low',
-                                    'badge-soft-warning': project.status === 'Medium'}">
+                                <div class="badge  float-right" [ngClass]="{
+                                    'badge-soft-danger': project.priorite === 'Haute',
+                                    'badge-soft-info': project.priorite ==='Faible',
+                                    'badge-soft-warning': project.priorite === 'Moyen'}">
                                     {{ project.priorite }}</div>
 
                             </ul>

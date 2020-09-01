@@ -38,7 +38,7 @@
                                     <td>{{timesheet.totalProduction}}</td>
                                     <td>{{timesheet.creationDate| date:'yyyy-MM-dd'}}</td>
                                     <td>{{timesheet.status}}</td>
-                                    <td><button (click)="deleteUser(timesheet.id)" class="btn btn-danger">Supprimer</button>
+                                    <td><button (click)="deleteTimesheet(timesheet.id)" class="btn btn-danger">Supprimer</button>
                                         <button (click)="timesheetDetails(timesheet.id)" class="btn btn-info" style="margin-left: 10px">Modifier</button>
                                     </td>
                                 </tr>

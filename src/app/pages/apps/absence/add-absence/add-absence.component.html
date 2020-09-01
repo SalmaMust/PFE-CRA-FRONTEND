@@ -80,8 +80,7 @@
         <div class="col-md-3 col-xl-5">
 
             <h4 class="mb-1 mt-0"> Ajouter Absence </h4>
-            <button type="button" class="btn btn-rounded btn-danger float-right" (click)="goToHome()"><i class="x"></i> X
-            </button>
+
         </div>
     </div>
 
@@ -126,14 +125,14 @@
                             </div>
                         </div>
 
-                        <div class="col-md-5">
+                        <!-- <div class="col-md-5">
                             <div class="form-group"><label>Status <span  class="text-danger">*</span></label>
                                 <select class="form-control" id="status" formControlName="name" required [(ngModel)]="absence.status" name="status" [value]="absence.status">
                                     <option *ngFor="let status of status">{{status}}</option>
                                     
                                     </select>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-md-8">
                             <div class="form-group">
                                 <label> Raison <span  class="text-danger">*</span></label>

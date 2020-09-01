@@ -8,6 +8,7 @@ import { UtilisateurRoutingModule } from './utilisateur-routing.module';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 
@@ -22,7 +23,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
         FormsModule, 
         ReactiveFormsModule
     ],
-    declarations: [ListUtilisateurComponent, AddUserComponent, UserDetailsComponent],
+    declarations: [ListUtilisateurComponent, AddUserComponent, UserDetailsComponent, EmployeeComponent],
 })
 
 export class UtilisateurModule { }

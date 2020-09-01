@@ -12,6 +12,7 @@ import { Task } from 'src/app/core/models/task.models';
 import { UserService } from '../../apps/utilisateur/user.service';
 import { User } from 'src/app/core/models/auth.models';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProfileService } from './profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -33,7 +34,7 @@ export class ProfileComponent implements OnInit {
   currentUser: User; 
   id: String;
 
-  constructor(private userService : UserService,private taskService : TaskService,private activeRoute: ActivatedRoute, private router: Router,private projectService : ProjectService,private absenceService : AbsenceService) { 
+  constructor(private profileService : ProfileService,private userService : UserService,private activeRoute: ActivatedRoute, private router: Router) { 
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
   }
@@ -65,7 +66,7 @@ export class ProfileComponent implements OnInit {
   }
   public getAllAbsences = () => {
     console.log('aaaaaa');
-    this.absenceService.getlistAbsence()
+    this.profileService.getlistAbsence()
     .subscribe(res => {
    //this.isLoading = false;
 
@@ -80,7 +81,7 @@ export class ProfileComponent implements OnInit {
   }
   public getAllTasks = () => {
     console.log('aaaaaa');
-    this.taskService.getlistTask()
+    this.profileService.getlistTask()
     .subscribe(res => {
    //this.isLoading = false;
 
@@ -95,7 +96,7 @@ export class ProfileComponent implements OnInit {
   }
   public getAllProjects = () => {
     console.log('aaaaaa');
-    this.projectService.getlistProject()
+    this.profileService.getlistProject()
     .subscribe(res => {
    //this.isLoading = false;
 

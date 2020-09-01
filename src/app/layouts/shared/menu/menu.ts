@@ -30,16 +30,17 @@ export const MENU: MenuItem[] = [
         icon: 'file-text',
         link: '/pages-profile'
     },
-    {
+   /*{
       label: 'Calendrier',
         icon: 'calendar',
         link: '/apps-calendar',
         role: 'admin',
-    },
+    },*/
     {
         label: 'Utilisateurs',
         icon: 'briefcase',
         role:'admin',
+        
         subItems: [
             {
                 label: 'List',
@@ -126,7 +127,7 @@ export const MENU_EMPLOYEE: MenuItem[] = [
     icon: 'file-text',
     link: '/other/pages-profile'
 },
-  {
+ /* {
     label: 'Calendrier',
       icon: 'calendar',
       link: '/apps-calendar',
@@ -142,11 +143,11 @@ export const MENU_EMPLOYEE: MenuItem[] = [
               link: '/apps/project-list',
               role:'admin',
           }
-      ]*/
+      ]
       label: 'Mes projets',
       icon: 'briefcase',
       link: '/apps/project-list',
-  },
+  },*/
   {
       label: 'Mes tâches',
       icon: 'bookmark',
@@ -171,20 +172,13 @@ export const MENU_EMPLOYEE: MenuItem[] = [
     
 },
 
-  {
-    label: 'Mes feuilles',
-    icon: 'bookmark',
+{
+    label: 'Feuille du temps',
+    icon: 'briefcase',
     role:'admin',
-    subItems: [
-        {
-            label: 'List',
-            link: '/apps/list-timesheet',
-        }, {
-          label: 'Detail',
-          link: '/apps/detail-timesheet',
-      }
-       
-    ]
+    link: '/apps/list-timesheet'
+
+    
 }];
 
 
@@ -199,12 +193,12 @@ export const MENU_MANAGER: MenuItem[] = [
     icon: 'file-text',
     link: '/other/pages-profile'
 },
-  {
+ /* {
     label: 'Calendrier',
       icon: 'calendar',
       link: '/apps-calendar',
       role: 'admin',
-  }, 
+  }, */
   {
     label: 'Mes employés',
     icon: 'briefcase',
@@ -248,10 +242,12 @@ export const MENU_MANAGER: MenuItem[] = [
        
 },
 {
-      label: 'Mes feuilles',
+      label: 'Feuille du temps',
       icon: 'briefcase',
-      link: '/apps/list-timesheet'
-  } ];
+      role:'admin',
+      link: '/apps/list-timesheet',
+      
+  }];
 
 
 export const MENU_RESPONSABLE: MenuItem[] = [
@@ -266,12 +262,28 @@ export const MENU_RESPONSABLE: MenuItem[] = [
     icon: 'file-text',
     link: '/other/pages-profile'
 },
-  {
+  /*{
     label: 'Calendrier',
       icon: 'calendar',
       link: '/apps-calendar',
       role: 'admin',
-  }, 
+  }, */
+  {
+        
+    label: 'Clients',
+    icon: 'bookmark',
+    role:'admin',
+    link: '/apps/list-client',
+
+   
+},{
+    label: 'Employées',
+    icon: 'briefcase',
+    role:'admin',
+    link: '/apps/utilisateur-list',
+
+   
+},
   {
       /*label: 'Project',
       icon: 'briefcase',
@@ -283,12 +295,12 @@ export const MENU_RESPONSABLE: MenuItem[] = [
               role:'admin',
           }
       ]*/
-      label: 'Mes projets',
+      label: 'Les projets',
       icon: 'briefcase',
       link: '/apps/project-list',
   },
   {
-      label: 'Mes tâches',
+      label: 'Les tâches',
       icon: 'bookmark',
       role:'admin',
       subItems: [
@@ -303,15 +315,17 @@ export const MENU_RESPONSABLE: MenuItem[] = [
       ]
   },
   {
-    label: 'Mes absences',
+    label: ' Absences',
     icon: 'bookmark',
     link: '/apps/list-absence',
      
 },
 {
-      label: 'Mes feuilles ',
+      label: 'Feuille du temps',
       icon: 'briefcase',
-      link: '/apps/detail-timesheet',
-          
+      role:'admin',
+      link: '/apps/list-timesheet'
+
+      
   }
    ];

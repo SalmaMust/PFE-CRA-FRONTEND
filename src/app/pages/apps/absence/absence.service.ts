@@ -30,7 +30,7 @@ id: String;
 public createAbsence (absence) {
   return this.http.post(`http://localhost:8000/api/absence`, absence);
 } 
-public getlistAbsence() {
+/* public getlistAbsence() {
 
   console.log("api get all");
   
@@ -43,10 +43,29 @@ public getlistAbsence() {
      return this.http.get<Absence[]>(`http://localhost:8000/api/absences`);
  }
    
+} */
+public getlistAbsence() {
+
+  console.log("api get all");
+  
+  if (this.currentUser.role === "User"||this.currentUser.role === "Manager"){
+    this.id = this.currentUser.id;
+      return this.http.get<Absence[]>(`http://localhost:8000/api/${this.id}/userabsences`);  
+ }
+  else
+ {
+     return this.http.get<Absence[]>(`http://localhost:8000/api/absences`);
+ }
+   
 }
 
 public getAbsenceById(id: String){
   return this.http.get<Absence>(`http://localhost:8000/api/absences/${id}`);
+}
+
+
+public getAbsenceByUserId(id: String){
+  return this.http.get<Absence[]>(`http://localhost:8000/api/${id}/userabsences`);  
 }
 }
 

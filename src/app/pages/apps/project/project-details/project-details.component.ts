@@ -5,6 +5,8 @@ import { Project, Widget } from 'src/app/core/models/project.models';
 import { Router } from '@angular/router';
 import { ClientService } from '../../client/client.service';
 import { Client } from 'src/app/core/models/client.models';
+import { User } from 'src/app/core/models/auth.models';
+import { UserService } from '../../utilisateur/user.service';
 
 @Component({
   selector: 'app-project-details',
@@ -15,8 +17,9 @@ export class ProjectDetailsComponent implements OnInit {
   project: Project ;
   clients : Client[];
   submitted: Boolean = false;
+  managers : User[];
 
-  constructor( private projectService: ProjectService , private clientService: ClientService,private activeRoute: ActivatedRoute, private router: Router) { }
+  constructor(private userService: UserService, private projectService: ProjectService , private clientService: ClientService,private activeRoute: ActivatedRoute, private router: Router) { }
 
   
 
@@ -29,10 +32,26 @@ export class ProjectDetailsComponent implements OnInit {
 
     this.getProjectByid();
     this.getAllClients();
+    this.getAllManagers();
+
     console.log(this.clients);
 
   }
- 
+  public getAllManagers = () => {
+    console.log('managers');
+    this.userService.getlistManagers()
+    .subscribe(res => {
+   //this.isLoading = false;
+
+     this.managers = res as User[];
+      console.log(res);
+
+    },
+    (error) => {
+      //this.errorService.handleError(error);
+      console.log(error);
+    })
+  }
   getProjectByid(){
     const id: string = this.activeRoute.snapshot.params.id;
     this.projectService.getProjectById(id)

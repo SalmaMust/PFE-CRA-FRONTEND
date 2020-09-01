@@ -1,11 +1,13 @@
 <div class="container-fluid">
     <div class="row page-title align-items-center">
         <div class="col-md-3 col-xl-6">
-            <h4 class="mb-1 mt-0">liste de utilisateurs</h4>
+            <h4 class="mb-1 mt-0" *ngIf="currentUser.role == 'Admin'|| currentUser.role == 'Responsable'">liste de utilisateurs</h4>
+            <h4 class="mb-1 mt-0" *ngIf="currentUser.role == 'Manager'">Mes employées</h4>
+
         </div>
         <div class="col-md-9 col-xl-6 text-md-right">
             <div class="mt-4 mt-md-0">
-                <button type="button" (click)="goToAdd()" class="btn btn-danger mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Ajouter </button>
+                <button type="button" (click)="goToAdd()" class="btn btn-danger mr-4 mb-3  mb-sm-0" *ngIf="currentUser.role == 'Admin'|| currentUser.role == 'Responsable'"><i class="uil-plus mr-1"></i> Ajouter </button>
 
             </div>
         </div>
@@ -31,7 +33,7 @@
                                     <th>Role</th>
                                     <th>Poste</th>
 
-                                    <th>Actions</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,8 +49,10 @@
                                     <td>{{user.phone}}</td>
                                     <td>{{user.role}}</td>
                                     <td>{{user.poste}}</td>
-                                    <td><button (click)="deleteUser(user.id)" class="btn btn-danger">Supprimer</button>
-                                        <button (click)="userDetails(user.id)" class="btn btn-info" style="margin-left: 10px">Modifier</button>
+                                    <td><button (click)="deleteUser(user.id)" class="btn btn-danger" *ngIf="currentUser.role == 'Admin'|| currentUser.role == 'Responsable'">Supprimer</button>
+                                        <button (click)="userDetails(user.id)" class="btn btn-info" style="margin-left: 10px" *ngIf="currentUser.role == 'Admin'|| currentUser.role == 'Responsable'"> Modifier </button>
+                                        <button (click)="employeeDetails(user.id)" class="btn btn-info" style="margin-left: 10px" *ngIf="currentUser.role == 'Manager'"> Détails </button>
+
                                     </td>
                                 </tr>
                             </tbody>

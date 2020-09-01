@@ -55,6 +55,7 @@ export class DetailTimesheetComponent implements OnInit {
     timesheet: Timesheet;
 
     interns: Internal[];
+    submitted = false;
 
     productions : Production[];
 
@@ -120,7 +121,25 @@ export class DetailTimesheetComponent implements OnInit {
        // this.newDynamic = {title1: "", title2: "",title3:""};  
         //this.dynamicArray.push(this.newDynamic);  
     }  
-    
+    save(){
+      console.log(this.timesheet);
+      
+      this.timesheetService.createTimesheet(this.timesheet)
+        .subscribe(data =>  console.log(data), error => console.log(error));
+      this.timesheet = new Timesheet();
+      this.gotoList();
+    }
+    gotoList() {
+      this.router.navigate(['/list-timesheet']);
+    }
+    onSubmit() {
+      this.submitted = true;
+      this.save();    
+    }
+    newUser(): void {
+      this.submitted = false;
+      this.timesheet = new Timesheet();
+    }
     addRow(index) {  
         let days: DayItem[] = [];
         for( let i=1;i<=this.daysOfMonth;i++)

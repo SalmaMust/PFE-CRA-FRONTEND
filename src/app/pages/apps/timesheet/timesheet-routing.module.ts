@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListTimesheetComponent } from './list-timesheet/list-timesheet.component';
 import { DetailTimesheetComponent } from './detail-timesheet/detail-timesheet.component';
+import { AddTimesheetComponent } from './add-timesheet/add-timesheet.component';
 
 
 
@@ -14,6 +15,11 @@ const routes: Routes = [
     {
         path: 'detail-timesheet/:id',
         component: DetailTimesheetComponent
+    },
+    
+    {
+        path: 'app-add-timesheet',
+        component: AddTimesheetComponent
     }
 ];
 

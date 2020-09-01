@@ -76,8 +76,7 @@
             <div class="card">
                 <div class="card-body">
                     <form (ngSubmit)="onSubmit()" class="m-b-30 ng-untouched ng-pristine ng-valid" novalidate="">
-                        <button type="button" class="btn btn-rounded btn-danger float-right" (click)="goToHome()"><i class="x"></i> X
-                        </button>
+
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group"><label class="control-label">Prénom <span class="text-danger">*</span></label><input class="form-control ng-untouched ng-pristine ng-valid" name="firstName" required [(ngModel)]="user.firstname" type="text"></div>
@@ -152,6 +151,21 @@
                                         <option value="Employee">Employee</option>
 
                                     </select></div>
+                            </div>
+
+                            <div class="col-md-6 " *ngIf="user.role == 'Employee'">
+                                <!-- <div class="form-group"><label>Responsable</label><input class="form-control ng-untouched ng-pristine ng-valid" name="leader" type="text"></div>
+                                     -->
+                                <div class="form-group"><label>Manager<span  class="text-danger">*</span></label>
+
+                                    <select class="form-control " [(ngModel)]="user.manager " name="user ">
+                                    <option *ngFor="let manager of managers" [ngValue]="manager ">
+                                        {{manager.firstname}} {{manager.lastname}}
+                                    </option>
+                                </select>
+                                </div>
+
+
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group"><label class="control-label">Poste<span class="text-danger m-l-5">*</span></label>

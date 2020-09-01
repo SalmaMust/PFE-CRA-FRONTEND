@@ -11,7 +11,7 @@ export class Project {
     client: Client;
     type: string;
     priorite: string;
-    responsable: User;
+    manager: User;
 
 }
 

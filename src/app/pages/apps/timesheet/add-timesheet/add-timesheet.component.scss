@@ -1,0 +1,48 @@
+.cra-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 16px 25px 12px;
+    border-radius: 4px 4px 0 0;
+}
+
+.day-cell {
+    width: 31px;
+    min-width: 31px !important;
+    max-width: 31px !important;
+    margin: 1px;
+    padding: 1px;
+    text-align: center;
+}
+
+.input-data {
+    min-width: 30px !important;
+    max-width: 30px !important;
+    height: 25px;
+    border: 1px solid #5d7b96;
+    margin: 16px 0;
+    border-radius: 3px;
+    font-size: 10px;
+    text-align: center;
+}
+
+select {
+    height: 10px;
+    font-size: 14px;
+    margin: 2px 0;
+    border: 1px;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.td-select {
+    margin-top: 1px;
+    padding-top: 0px;
+}

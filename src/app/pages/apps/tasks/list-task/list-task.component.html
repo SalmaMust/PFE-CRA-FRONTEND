@@ -5,15 +5,13 @@
         </div>
         <div class="col-md-9 col-xl-6 text-md-right">
             <div class="mt-4 mt-md-0">
-                <button type="button" (click)="goToAdd()" class="btn btn-soft-primary mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Create
-            Task </button>
-                <button type="button" class="btn btn-rounded btn-danger float-right" (click)="goToHome()"><i class="x"></i> X
-            </button>
+                <button type="button" (click)="goToAdd()" class="btn btn-soft-primary mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Ajouter </button>
+
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-10">
             <div class="card">
                 <div class="card-body">
 
@@ -26,7 +24,7 @@
                                     <th>Date Fin</th>
                                     <th>Status</th>
                                     <th>Priorité</th>
-                                    <th>Employée</th>
+                                    <th *ngIf="currentUser.role == 'Manager'||currentUser.role == 'Admin'||currentUser.role == 'Responsable'">Employée</th>
                                     <th>Projet</th>
                                     <th>Actions</th>
                                 </tr>
@@ -38,11 +36,11 @@
                                     <td>{{ task.date | date:'yyyy-MM-dd'}}</td>
                                     <td>{{task.status}}</td>
                                     <td>{{task.priorite}}</td>
-                                    <td>{{task.user.firstname}}</td>
+                                    <td *ngIf="currentUser.role == 'Manager'||currentUser.role == 'Admin'||currentUser.role == 'Responsable'">{{task.user.firstname}}</td>
                                     <td>{{task.project.projectName}}</td>
 
-                                    <td><button (click)="deleteTask(task.id)" class="btn btn-danger">Supprimer</button>
-                                        <button (click)="taskDetails(task.id)" class="btn btn-info" style="margin-left: 10px">Modifier</button>
+                                    <td><button (click)="deleteTask(task.id)" class="btn btn-soft-danger">Supprimer</button>
+                                        <button (click)="taskDetails(task.id)" class="btn btn-soft-info" style="margin-left: 10px">Modifier</button>
                                     </td>
                                 </tr>
                             </tbody>

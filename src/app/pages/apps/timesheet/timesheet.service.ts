@@ -28,13 +28,13 @@ timesheet: Timesheet;
     return this.http.get(this.createCompleteRoute(route, environment.urlAddress));
   }*/
 
-/*   public delete(id: string){
-    return this.http.delete(`http://localhost:8000/api/users/${id}`);
-  } */
+  public delete(id: string){
+    return this.http.delete(`http://localhost:8000/api/timesheets/${id}`);
+  } 
 
-/* public createUser (user) {
-  return this.http.post(`http://localhost:8000/api/user`, user);
-}  */
+public createTimesheet (timesheet) {
+  return this.http.post(`http://localhost:8000/api/timesheet`, timesheet);
+}  
 public getlistTimesheet() {
 
   console.log("api get all timesheets");
@@ -50,6 +50,10 @@ public getlistTimesheet() {
 
   return this.http.get<User[]>(`http://localhost:8000/api/managers`);
 }*/
+public getTimesheetByUserId(id: String){
+  return this.http.get<Timesheet[]>(`http://localhost:8000/api/timesheet/byuser/${id}`);
+}
+
 
 public getTimesheetById(id: String){
   return this.http.get<Timesheet>(`http://localhost:8000/api/timesheet/${id}`);

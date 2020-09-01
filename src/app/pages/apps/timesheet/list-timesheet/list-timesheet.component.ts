@@ -17,7 +17,9 @@ export class ListTimesheetComponent implements OnInit {
   ngOnInit() {
     this.getAllTimesheets();
   }
-
+  goToAdd() {
+    this.router.navigate(['app-add-timesheet']);
+  }
   public getAllTimesheets = () => {
     console.log('times');
     this.timesheetService.getlistTimesheet()
@@ -38,5 +40,8 @@ export class ListTimesheetComponent implements OnInit {
 
     //this.router.navigate(['espace-administration/details/'+id]);
     this.router.navigate(['detail-timesheet/'+id]);
+  }
+  public deleteTimesheet  = (id) => {
+    
   }
 }

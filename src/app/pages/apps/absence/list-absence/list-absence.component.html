@@ -9,12 +9,11 @@
         <div class="card">
             <div class="card-body">
                 <form (ngSubmit)="onSubmit()" class="form-horizontal">
-                    <button type="button" class="btn btn-rounded btn-danger float-right" (click)="goToHome()"><i class="x"></i> X
-                    </button>
+
                     <div class="row">
                         <div class="col">
                             <div class=" row filter-row">
-                                <div class="col-sm-2 col-md-2 col-md-2">
+                                <!--                        <div class="col-sm-2 col-md-2 col-md-2">
                                     <div class="form-group form-focus">
 
                                         <label class="form-group " for="name">Employée<span  class="text-danger">*</span></label>
@@ -26,7 +25,7 @@
                                 </select>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-sm-2 col-md-2 col-md-2">
                                     <div class="form-group form-focus">
                                         <label class="form-group" for="name">Type<span  class="text-danger">*</span></label>
@@ -58,7 +57,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-2 col-md-2 col-md-2">
+                                <!--  <div class="col-sm-2 col-md-2 col-md-2">
                                     <div class="form-group form-focus">
 
                                         <label class="form-group" for="name"> Status<span  class="text-danger">*</span></label>
@@ -69,10 +68,10 @@
                                             </option>
                                         </select>
                                         </div>
-                                    </div>
+                                    </div> 
 
 
-                                </div>
+                            </div>-->
                                 <div class="col-sm-2 col-md-2 col-md-2">
                                     <div class="form-group form-focus">
 
@@ -119,21 +118,23 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th scope="col">Employée</th>
+                                    <th scope="col"></th>
                                     <th scope="col">Type</th>
 
                                     <th scope="col"> Date Début</th>
                                     <th scope="col">Date Fin</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Raison</th>
-
                                     <th scope="col">Actions</th>
+                                    <th></th>
+
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let absence of dataSource">
                                     <td>{{absence.id}}</td>
-                                    <td>{{absence.user.firstname}}</td>
+                                    <td></td>
 
                                     <td>{{absence.type}}</td>
                                     <td>{{absence.startDate| date:'yyyy-MM-dd'}}</td>
@@ -141,10 +142,11 @@
                                     <td>{{absence.status}}</td>
                                     <td>{{absence.reason}}</td>
 
-                                    <td><button (click)="deleteAbsence(absence.id)" class="btn btn-soft-danger">Supprimer</button>
-                                        <button (click)="absenceDetails(absence.id)" class="btn btn-soft-warning" style="margin-left: 10px">Modifier</button>
-                                        <button class="btn btn-soft-success" style="margin-left: 10px">Soumettre</button>
+                                    <td *ngIf="absence.status =='En attente'"><button (click)="deleteAbsence(absence.id)" class="btn btn-soft-danger">Supprimer</button>
+                                        <button (click)="absenceDetails(absence.id)" class="btn btn-soft-warning" style="margin-left: 10px">Modifier</button></td>
+                                    <td *ngIf="absence.status =='Enregistré'"><button class="btn btn-soft-success" *ngIf="currentUser.role == 'Employee'">Soumettre</button>
                                     </td>
+                                    <td *ngIf="absence.status =='Accepter'|| absence.status == 'Refuser'"></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -3,15 +3,14 @@
     <div class="row page-title align-items-center">
         <div class="col-md-3 col-xl-6">
 
-            <h4 class="mb-1 mt-0">Clients</h4>
+            <h4 class="mb-1 mt-0">Liste de Clients</h4>
         </div>
 
         <div class="col-md-9 col-xl-6 text-md-right">
             <div class="mt-4 mt-md-0">
                 <button type="button" (click)="goToAdd()" class="btn btn-soft-primary mr-4 mb-3  mb-sm-0"><i class="uil-plus mr-1"></i> Ajouter
-            Client</button>
-                <button type="button" class="btn btn-rounded btn-danger float-right" (click)="goToHome()"><i class="x"></i> X
-            </button>
+           </button>
+
             </div>
         </div>
 
@@ -75,6 +74,7 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Tel</th>
                                 <th scope="col">Adresse</th>
+
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
@@ -87,7 +87,8 @@
                                 <td>{{client.phone}}</td>
                                 <td>{{client.address}}</td>
                                 <td><button (click)="deleteClient(client.id)" class="btn btn-soft-danger">Supprimer</button>
-                                    <button (click)="clientDetails(client.id)" class=" btn btn-soft-success" style="margin-left: 10px">Modifier</button>
+                                    <button (click)="clientDetails(client.id)" class=" btn btn-soft-warning" style="margin-left: 10px">Modifier</button>
+
                                 </td>
                             </tr>
                         </tbody>

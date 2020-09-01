@@ -3,6 +3,7 @@ import { Client } from 'src/app/core/models/client.models';
 import { ClientService } from '../client.service';
 import { Router } from '@angular/router';
 import { ClientProfilService } from 'src/app/core/services/client.service';
+import { User } from 'src/app/core/models/auth.models';
 
 @Component({
   selector: 'app-list-client',
@@ -12,10 +13,14 @@ import { ClientProfilService } from 'src/app/core/services/client.service';
 export class ListClientComponent implements OnInit {
 
   dataSource : Client[];
+  currentUser: User; 
+
 
   constructor(private clientService : ClientService,  private router: Router) { }
 
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
     this.getAllClients();
   }
   goToHome() {

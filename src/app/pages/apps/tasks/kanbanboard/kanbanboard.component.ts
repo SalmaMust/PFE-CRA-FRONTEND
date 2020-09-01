@@ -44,7 +44,6 @@ export class KanbanboardComponent implements OnInit {
 
   ngOnInit() {
     // tslint:disable-next-line: max-line-length
-    this.breadCrumbItems = [{ label: 'Shreyu', path: '/' }, { label: 'Apps', path: '/' }, { label: 'Tasks', path: '/' }, { label: 'Tasks Board', active: true }];
     this.getAllProjects();
     this.getAllTasks();
         /**
